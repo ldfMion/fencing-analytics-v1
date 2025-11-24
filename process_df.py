@@ -16,8 +16,14 @@ def add_touches_to_df(df: pd.DataFrame):
     df["bout_id"] = df["Left Fencer"] + " vs " + df["Right Fencer"]
 
     # --- Step 4: Calculate cumulative scores in order ---
-    df["Left Score"] = df.groupby("bout_id")["left_score_touch"].cumsum()
-    df["Right Score"] = df.groupby("bout_id")["right_score_touch"].cumsum()
+    # We get the score *before* the current touch happens by subtracting the
+    # current touch from the cumulative sum.
+    df["Left Score"] = (
+        df.groupby("bout_id")["left_score_touch"].cumsum() - df["left_score_touch"]
+    )
+    df["Right Score"] = (
+        df.groupby("bout_id")["right_score_touch"].cumsum() - df["right_score_touch"]
+    )
 
     # Drop intermediate logical columns if desired
     df = df.drop(columns=["scored", "left_score_touch", "right_score_touch"])
