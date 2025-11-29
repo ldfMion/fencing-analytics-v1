@@ -16,12 +16,14 @@ class Metric:
             return f"{self._name}: N/A"
 
 
-class Metrics:
+class MetricsCalculator:
     def __init__(self, p: FencerActionProvider):
         self._p = p
-        self._metrics = self._init_metrics()
 
-    def _init_metrics(self) -> List[Metric]:
+    def calculate(self):
+        return [str(metric) for metric in self._metrics()]
+
+    def _metrics(self) -> List[Metric]:
         return [
             Metric(
                 "Attack Effectiveness",
@@ -112,6 +114,3 @@ class Metrics:
                 ),
             ),
         ]
-
-    def calculate(self) -> List[Metric]:
-        return self._metrics

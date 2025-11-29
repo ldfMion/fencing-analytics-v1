@@ -1,3 +1,5 @@
+from typing import cast
+
 import pandas as pd
 
 
@@ -29,3 +31,9 @@ def add_touches_to_df(df: pd.DataFrame):
     df = df.drop(columns=["scored", "left_score_touch", "right_score_touch"])
 
     return df
+
+
+def get_bouts_from_df(df: pd.DataFrame):
+    only_fencers = cast(pd.DataFrame, df[["Left Fencer", "Right Fencer"]])
+    unique_pairs = only_fencers.drop_duplicates()
+    return unique_pairs
