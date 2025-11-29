@@ -18,6 +18,7 @@ def main():
         "overall": main_df,
         "Day 1": main_df[main_df["Date"] == "08/11/25"],
         "Day 2": main_df[main_df["Date"] == "09/11/25"],
+        "4-4": main_df[(main_df["Left Score"] == 4) & (main_df["Right Score"] == 4)],
     }
 
     for name, df in sources.items():

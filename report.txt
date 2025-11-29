@@ -49,6 +49,23 @@ Attacks: 13 (0.62), Counter Attacks: 4 (0.19), Ripostes: 4 (0.19)
 Received Distribution: 
 Attacks: 28 (0.7), Counter Attacks: 8 (0.2), Ripostes: 4 (0.1)
 
+------- Analysis: 4-4 --------
+Attack Effectiveness: 1.0
+Defense Effectiveness: N/A
+Riposte-to-Parry Ratio: N/A
+Counter-Attack Effectiveness: N/A
+Aggression: N/A
+Attack vs Counter-Attack Efficiency: 0.5
+Attack vs Parry Efficiency: N/A
+Offense EV: 0.0
+Defense EV: N/A
+Action Distribution: 
+Attacks: 2 (1.0), Counter Attacks: 0 (0.0), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 1 (1.0), Ripostes: 0 (0.0)
+
 Analyzing bouts: 
 --- Mion vs McIsaac ---
 Attack Effectiveness: 0.5
