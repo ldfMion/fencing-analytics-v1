@@ -9,11 +9,11 @@ Attack vs Parry Efficiency: 0.48
 Offense EV: 0.17
 Defense EV: -0.22
 Action Distribution: 
-Attacks: 63, Counter Attacks: 29, Parries: 22
+Attacks: 63 (0.55), Counter Attacks: 29 (0.25), Parries: 22 (0.19)
 Scored Distribution: 
-Attacks: 37, Counter Attacks: 18, Ripostes: 10
+Attacks: 37 (0.57), Counter Attacks: 18 (0.28), Ripostes: 10 (0.15)
 Received Distribution: 
-Attacks: 44, Counter Attacks: 14, Ripostes: 12
+Attacks: 44 (0.63), Counter Attacks: 14 (0.2), Ripostes: 12 (0.17)
 
 ------- Analysis: Day 1 --------
 Attack Effectiveness: 1.71
@@ -26,11 +26,11 @@ Attack vs Parry Efficiency: 0.47
 Offense EV: 0.26
 Defense EV: 0.11
 Action Distribution: 
-Attacks: 38, Counter Attacks: 17, Parries: 12
+Attacks: 38 (0.57), Counter Attacks: 17 (0.25), Parries: 12 (0.18)
 Scored Distribution: 
-Attacks: 24, Counter Attacks: 14, Ripostes: 6
+Attacks: 24 (0.55), Counter Attacks: 14 (0.32), Ripostes: 6 (0.14)
 Received Distribution: 
-Attacks: 16, Counter Attacks: 6, Ripostes: 8
+Attacks: 16 (0.53), Counter Attacks: 6 (0.2), Ripostes: 8 (0.27)
 
 ------- Analysis: Day 2 --------
 Attack Effectiveness: 1.08
@@ -43,11 +43,11 @@ Attack vs Parry Efficiency: 0.5
 Offense EV: 0.04
 Defense EV: -0.56
 Action Distribution: 
-Attacks: 25, Counter Attacks: 12, Parries: 10
+Attacks: 25 (0.53), Counter Attacks: 12 (0.26), Parries: 10 (0.21)
 Scored Distribution: 
-Attacks: 13, Counter Attacks: 4, Ripostes: 4
+Attacks: 13 (0.62), Counter Attacks: 4 (0.19), Ripostes: 4 (0.19)
 Received Distribution: 
-Attacks: 28, Counter Attacks: 8, Ripostes: 4
+Attacks: 28 (0.7), Counter Attacks: 8 (0.2), Ripostes: 4 (0.1)
 
 Analyzing bouts: 
 --- Mion vs McIsaac ---
@@ -61,11 +61,11 @@ Attack vs Parry Efficiency: 1.0
 Offense EV: -0.33
 Defense EV: 1.0
 Action Distribution: 
-Attacks: 3, Counter Attacks: 4, Parries: 0
+Attacks: 3 (0.43), Counter Attacks: 4 (0.57), Parries: 0 (0.0)
 Scored Distribution: 
-Attacks: 1, Counter Attacks: 4, Ripostes: 0
+Attacks: 1 (0.2), Counter Attacks: 4 (0.8), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 0, Counter Attacks: 2, Ripostes: 0
+Attacks: 0 (0.0), Counter Attacks: 2 (1.0), Ripostes: 0 (0.0)
 
 --- Mion vs Orowicz ---
 Attack Effectiveness: N/A
@@ -78,11 +78,11 @@ Attack vs Parry Efficiency: 1.0
 Offense EV: 1.0
 Defense EV: 0.0
 Action Distribution: 
-Attacks: 4, Counter Attacks: 1, Parries: 1
+Attacks: 4 (0.67), Counter Attacks: 1 (0.17), Parries: 1 (0.17)
 Scored Distribution: 
-Attacks: 4, Counter Attacks: 0, Ripostes: 1
+Attacks: 4 (0.8), Counter Attacks: 0 (0.0), Ripostes: 1 (0.2)
 Received Distribution: 
-Attacks: 1, Counter Attacks: 0, Ripostes: 0
+Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
 --- Mion vs Chin ---
 Attack Effectiveness: 1.0
@@ -95,11 +95,11 @@ Attack vs Parry Efficiency: 0.0
 Offense EV: 0.0
 Defense EV: 1.0
 Action Distribution: 
-Attacks: 4, Counter Attacks: 2, Parries: 1
+Attacks: 4 (0.57), Counter Attacks: 2 (0.29), Parries: 1 (0.14)
 Scored Distribution: 
-Attacks: 2, Counter Attacks: 2, Ripostes: 1
+Attacks: 2 (0.4), Counter Attacks: 2 (0.4), Ripostes: 1 (0.2)
 Received Distribution: 
-Attacks: 0, Counter Attacks: 1, Ripostes: 1
+Attacks: 0 (0.0), Counter Attacks: 1 (0.5), Ripostes: 1 (0.5)
 
 --- Mion vs Fukuda ---
 Attack Effectiveness: 3.0
@@ -112,11 +112,11 @@ Attack vs Parry Efficiency: 0.5
 Offense EV: 0.5
 Defense EV: 0.0
 Action Distribution: 
-Attacks: 4, Counter Attacks: 2, Parries: 1
+Attacks: 4 (0.57), Counter Attacks: 2 (0.29), Parries: 1 (0.14)
 Scored Distribution: 
-Attacks: 3, Counter Attacks: 2, Ripostes: 0
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 2, Counter Attacks: 0, Ripostes: 1
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 
 --- Mion vs Burke ---
 Attack Effectiveness: 3.0
@@ -129,11 +129,11 @@ Attack vs Parry Efficiency: 0.0
 Offense EV: 0.5
 Defense EV: 0.0
 Action Distribution: 
-Attacks: 4, Counter Attacks: 0, Parries: 2
+Attacks: 4 (0.67), Counter Attacks: 0 (0.0), Parries: 2 (0.33)
 Scored Distribution: 
-Attacks: 3, Counter Attacks: 0, Ripostes: 2
+Attacks: 3 (0.6), Counter Attacks: 0 (0.0), Ripostes: 2 (0.4)
 Received Distribution: 
-Attacks: 2, Counter Attacks: 0, Ripostes: 1
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 
 --- Mion vs Wu ---
 Attack Effectiveness: 0.0
@@ -146,11 +146,11 @@ Attack vs Parry Efficiency: 0.0
 Offense EV: -1.0
 Defense EV: 0.0
 Action Distribution: 
-Attacks: 4, Counter Attacks: 1, Parries: 1
+Attacks: 4 (0.67), Counter Attacks: 1 (0.17), Parries: 1 (0.17)
 Scored Distribution: 
-Attacks: 0, Counter Attacks: 1, Ripostes: 0
+Attacks: 0 (0.0), Counter Attacks: 1 (1.0), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 1, Counter Attacks: 2, Ripostes: 2
+Attacks: 1 (0.2), Counter Attacks: 2 (0.4), Ripostes: 2 (0.4)
 
 --- Mion vs Zhang ---
 Attack Effectiveness: N/A
@@ -163,11 +163,11 @@ Attack vs Parry Efficiency: N/A
 Offense EV: 1.0
 Defense EV: 0.0
 Action Distribution: 
-Attacks: 3, Counter Attacks: 1, Parries: 2
+Attacks: 3 (0.5), Counter Attacks: 1 (0.17), Parries: 2 (0.33)
 Scored Distribution: 
-Attacks: 3, Counter Attacks: 1, Ripostes: 1
+Attacks: 3 (0.6), Counter Attacks: 1 (0.2), Ripostes: 1 (0.2)
 Received Distribution: 
-Attacks: 2, Counter Attacks: 0, Ripostes: 0
+Attacks: 2 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
 --- Mion vs Graham ---
 Attack Effectiveness: 1.0
@@ -180,11 +180,11 @@ Attack vs Parry Efficiency: 0.0
 Offense EV: 0.0
 Defense EV: -0.5
 Action Distribution: 
-Attacks: 4, Counter Attacks: 0, Parries: 2
+Attacks: 4 (0.67), Counter Attacks: 0 (0.0), Parries: 2 (0.33)
 Scored Distribution: 
-Attacks: 2, Counter Attacks: 0, Ripostes: 1
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 Received Distribution: 
-Attacks: 3, Counter Attacks: 0, Ripostes: 2
+Attacks: 3 (0.6), Counter Attacks: 0 (0.0), Ripostes: 2 (0.4)
 
 --- Mion vs Chen, Andrew ---
 Attack Effectiveness: 2.0
@@ -197,11 +197,11 @@ Attack vs Parry Efficiency: 0.5
 Offense EV: 0.33
 Defense EV: 0.2
 Action Distribution: 
-Attacks: 3, Counter Attacks: 4, Parries: 1
+Attacks: 3 (0.38), Counter Attacks: 4 (0.5), Parries: 1 (0.12)
 Scored Distribution: 
-Attacks: 2, Counter Attacks: 3, Ripostes: 0
+Attacks: 2 (0.4), Counter Attacks: 3 (0.6), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 2, Counter Attacks: 0, Ripostes: 1
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 
 --- Mion vs Oh, Sean ---
 Attack Effectiveness: 4.0
@@ -214,11 +214,11 @@ Attack vs Parry Efficiency: 1.0
 Offense EV: 0.6
 Defense EV: -0.5
 Action Distribution: 
-Attacks: 5, Counter Attacks: 2, Parries: 1
+Attacks: 5 (0.62), Counter Attacks: 2 (0.25), Parries: 1 (0.12)
 Scored Distribution: 
-Attacks: 4, Counter Attacks: 1, Ripostes: 0
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 3, Counter Attacks: 1, Ripostes: 0
+Attacks: 3 (0.75), Counter Attacks: 1 (0.25), Ripostes: 0 (0.0)
 
 --- Mion vs Morais ---
 Attack Effectiveness: 0.5
@@ -231,11 +231,11 @@ Attack vs Parry Efficiency: 1.0
 Offense EV: -0.33
 Defense EV: -0.5
 Action Distribution: 
-Attacks: 3, Counter Attacks: 3, Parries: 1
+Attacks: 3 (0.43), Counter Attacks: 3 (0.43), Parries: 1 (0.14)
 Scored Distribution: 
-Attacks: 1, Counter Attacks: 1, Ripostes: 0
+Attacks: 1 (0.5), Counter Attacks: 1 (0.5), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 3, Counter Attacks: 2, Ripostes: 0
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
 
 --- Mion vs Stanley ---
 Attack Effectiveness: 0.0
@@ -248,11 +248,11 @@ Attack vs Parry Efficiency: 0.0
 Offense EV: -1.0
 Defense EV: N/A
 Action Distribution: 
-Attacks: 5, Counter Attacks: 0, Parries: 0
+Attacks: 5 (1.0), Counter Attacks: 0 (0.0), Parries: 0 (0.0)
 Scored Distribution: 
-Attacks: 0, Counter Attacks: 0, Ripostes: 0
+Attacks: 0 (N/A), Counter Attacks: 0 (N/A), Ripostes: 0 (N/A)
 Received Distribution: 
-Attacks: 0, Counter Attacks: 3, Ripostes: 2
+Attacks: 0 (0.0), Counter Attacks: 3 (0.6), Ripostes: 2 (0.4)
 
 --- Mion vs Li, Brandon ---
 Attack Effectiveness: 2.0
@@ -265,11 +265,11 @@ Attack vs Parry Efficiency: 0.5
 Offense EV: 0.33
 Defense EV: -0.2
 Action Distribution: 
-Attacks: 3, Counter Attacks: 2, Parries: 2
+Attacks: 3 (0.43), Counter Attacks: 2 (0.29), Parries: 2 (0.29)
 Scored Distribution: 
-Attacks: 2, Counter Attacks: 1, Ripostes: 1
+Attacks: 2 (0.5), Counter Attacks: 1 (0.25), Ripostes: 1 (0.25)
 Received Distribution: 
-Attacks: 3, Counter Attacks: 0, Ripostes: 1
+Attacks: 3 (0.75), Counter Attacks: 0 (0.0), Ripostes: 1 (0.25)
 
 --- Mion vs Um ---
 Attack Effectiveness: 2.0
@@ -282,11 +282,11 @@ Attack vs Parry Efficiency: N/A
 Offense EV: 0.33
 Defense EV: -1.0
 Action Distribution: 
-Attacks: 3, Counter Attacks: 1, Parries: 1
+Attacks: 3 (0.6), Counter Attacks: 1 (0.2), Parries: 1 (0.2)
 Scored Distribution: 
-Attacks: 2, Counter Attacks: 0, Ripostes: 0
+Attacks: 2 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 4, Counter Attacks: 1, Ripostes: 0
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
 
 --- Mion vs Lee, Jacob ---
 Attack Effectiveness: 4.0
@@ -299,11 +299,11 @@ Attack vs Parry Efficiency: 0.5
 Offense EV: 0.6
 Defense EV: 0.0
 Action Distribution: 
-Attacks: 5, Counter Attacks: 0, Parries: 1
+Attacks: 5 (0.83), Counter Attacks: 0 (0.0), Parries: 1 (0.17)
 Scored Distribution: 
-Attacks: 4, Counter Attacks: 0, Ripostes: 1
+Attacks: 4 (0.8), Counter Attacks: 0 (0.0), Ripostes: 1 (0.2)
 Received Distribution: 
-Attacks: 1, Counter Attacks: 0, Ripostes: 1
+Attacks: 1 (0.5), Counter Attacks: 0 (0.0), Ripostes: 1 (0.5)
 
 --- Mion vs Baumstein ---
 Attack Effectiveness: 1.0
@@ -316,11 +316,11 @@ Attack vs Parry Efficiency: N/A
 Offense EV: 0.0
 Defense EV: -0.2
 Action Distribution: 
-Attacks: 2, Counter Attacks: 3, Parries: 1
+Attacks: 2 (0.33), Counter Attacks: 3 (0.5), Parries: 1 (0.17)
 Scored Distribution: 
-Attacks: 1, Counter Attacks: 2, Ripostes: 0
+Attacks: 1 (0.33), Counter Attacks: 2 (0.67), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 3, Counter Attacks: 1, Ripostes: 0
+Attacks: 3 (0.75), Counter Attacks: 1 (0.25), Ripostes: 0 (0.0)
 
 --- Mion vs Bruk ---
 Attack Effectiveness: N/A
@@ -333,11 +333,11 @@ Attack vs Parry Efficiency: 1.0
 Offense EV: 1.0
 Defense EV: -1.0
 Action Distribution: 
-Attacks: 1, Counter Attacks: 1, Parries: 2
+Attacks: 1 (0.25), Counter Attacks: 1 (0.25), Parries: 2 (0.5)
 Scored Distribution: 
-Attacks: 1, Counter Attacks: 0, Ripostes: 0
+Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 Received Distribution: 
-Attacks: 5, Counter Attacks: 0, Ripostes: 0
+Attacks: 5 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
 --- Mion vs Tsimiklis ---
 Attack Effectiveness: N/A
@@ -350,11 +350,11 @@ Attack vs Parry Efficiency: N/A
 Offense EV: N/A
 Defense EV: -1.0
 Action Distribution: 
-Attacks: 0, Counter Attacks: 2, Parries: 0
+Attacks: 0 (0.0), Counter Attacks: 2 (1.0), Parries: 0 (0.0)
 Scored Distribution: 
-Attacks: 0, Counter Attacks: 0, Ripostes: 0
+Attacks: 0 (N/A), Counter Attacks: 0 (N/A), Ripostes: 0 (N/A)
 Received Distribution: 
-Attacks: 5, Counter Attacks: 0, Ripostes: 0
+Attacks: 5 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
 --- Mion vs Lee, Aidan ---
 Attack Effectiveness: 2.0
@@ -367,9 +367,9 @@ Attack vs Parry Efficiency: N/A
 Offense EV: 0.33
 Defense EV: -0.33
 Action Distribution: 
-Attacks: 3, Counter Attacks: 0, Parries: 2
+Attacks: 3 (0.6), Counter Attacks: 0 (0.0), Parries: 2 (0.4)
 Scored Distribution: 
-Attacks: 2, Counter Attacks: 0, Ripostes: 2
+Attacks: 2 (0.5), Counter Attacks: 0 (0.0), Ripostes: 2 (0.5)
 Received Distribution: 
-Attacks: 4, Counter Attacks: 1, Ripostes: 0
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
 

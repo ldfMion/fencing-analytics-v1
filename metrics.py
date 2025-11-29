@@ -31,13 +31,25 @@ class NumericalMetric(Metric):
 
 
 class DistributionMetric(Metric):
-    def __init__(self, name: str, calculation: Callable[[], Dict[str, float]]):
+    def __init__(
+        self,
+        name: str,
+        distribution_calc: Callable[[], Dict[str, float]],
+        total_calc: Callable[[], int],
+    ):
         super().__init__(name)
-        self._calculation = calculation
+        self._distribution_calc = distribution_calc
+        self._total_calc = total_calc
 
     def result_to_str(self):
+        dist = self._distribution_calc()
+        total = self._total_calc()
         return "\n" + str.join(
-            ", ", [f"{key}: {value}" for key, value in self._calculation().items()]
+            ", ",
+            [
+                f"{key}: {value} ({self._calc_to_str(lambda: value / total)})"
+                for key, value in dist.items()
+            ],
         )
 
 
@@ -140,7 +152,7 @@ class MetricsCalculator:
             ),
             DistributionMetric(
                 "Action Distribution",
-                lambda: {
+                distribution_calc=lambda: {
                     "Attacks": self._p.attacks_scored()
                     + self._p.counter_attacks_received()
                     + self._p.ripostes_received(),
@@ -149,21 +161,34 @@ class MetricsCalculator:
                     "Parries": self._p.ripostes_scored()
                     + self._p.attacks_received_from_parries(),
                 },
+                total_calc=lambda: self._p.attacks_scored()
+                + self._p.counter_attacks_received()
+                + self._p.ripostes_received()
+                + self._p.attacks_received_from_counter_attacks()
+                + self._p.counter_attacks_scored()
+                + self._p.ripostes_scored()
+                + self._p.attacks_received_from_parries(),
             ),
             DistributionMetric(
                 "Scored Distribution",
-                lambda: {
+                distribution_calc=lambda: {
                     "Attacks": self._p.attacks_scored(),
                     "Counter Attacks": self._p.counter_attacks_scored(),
                     "Ripostes": self._p.ripostes_scored(),
                 },
+                total_calc=lambda: self._p.attacks_scored()
+                + self._p.counter_attacks_scored()
+                + self._p.ripostes_scored(),
             ),
             DistributionMetric(
                 "Received Distribution",
-                lambda: {
+                distribution_calc=lambda: {
                     "Attacks": self._p.attacks_received(),
                     "Counter Attacks": self._p.counter_attacks_received(),
                     "Ripostes": self._p.ripostes_received(),
                 },
+                total_calc=lambda: self._p.attacks_received()
+                + self._p.counter_attacks_received()
+                + self._p.ripostes_received(),
             ),
         ]
