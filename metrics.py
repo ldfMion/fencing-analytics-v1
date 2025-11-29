@@ -1,6 +1,6 @@
 from typing import Callable, List
 
-from data_provider import FencerActionProvider
+from fencer_action_provider import FencerActionProvider
 
 
 class Metric:
@@ -30,18 +30,13 @@ class Metrics:
             ),
             Metric(
                 "Defense Effectiveness",
-                lambda: (
-                    self._p.counter_attacks_scored() + self._p.ripostes_scored()
-                )
+                lambda: (self._p.counter_attacks_scored() + self._p.ripostes_scored())
                 / self._p.attacks_received(),
             ),
             Metric(
                 "Riposte-to-Parry Ratio",
                 lambda: self._p.ripostes_scored()
-                / (
-                    self._p.ripostes_scored()
-                    + self._p.attacks_received_from_parries()
-                ),
+                / (self._p.ripostes_scored() + self._p.attacks_received_from_parries()),
             ),
             Metric(
                 "Counter-Attack Effectiveness",
@@ -76,10 +71,7 @@ class Metrics:
             Metric(
                 "Attack vs Parry Efficiency",
                 lambda: self._p.attacks_scored_from_parries()
-                / (
-                    self._p.attacks_scored_from_parries()
-                    + self._p.ripostes_received()
-                ),
+                / (self._p.attacks_scored_from_parries() + self._p.ripostes_received()),
             ),
             Metric(
                 "Offense EV",
@@ -92,10 +84,7 @@ class Metrics:
                     )
                 )
                 - (
-                    (
-                        self._p.counter_attacks_received()
-                        + self._p.ripostes_received()
-                    )
+                    (self._p.counter_attacks_received() + self._p.ripostes_received())
                     / (
                         self._p.attacks_scored()
                         + self._p.counter_attacks_received()

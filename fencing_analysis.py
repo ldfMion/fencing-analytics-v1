@@ -1,18 +1,15 @@
-from typing import Dict, List
+from typing import List
+
 import pandas as pd
 
-from data_provider import FencerActionProvider
 from metrics import Metrics
 
 
 class FencingAnalysis:
-    def __init__(self, df: pd.DataFrame, analyses: Dict[str, FencerActionProvider]):
+    def __init__(self, df: pd.DataFrame, metrics: Metrics):
         self._df = df
-        self._analyses = analyses
+        self._metrics = metrics
 
-    def run(self) -> Dict[str, List[str]]:
-        results = {}
-        for name, provider in self._analyses.items():
-            metrics = Metrics(provider)
-            results[name] = [str(metric) for metric in metrics.calculate()]
+    def run(self) -> List[str]:
+        results = [str(metric) for metric in self._metrics.calculate()]
         return results
