@@ -1,7 +1,6 @@
 from typing import cast
 
 import pandas as pd
-
 from csv_fencer_action_provider import CsvFencerActionProvider
 from metrics import MetricsCalculator
 from process_df import add_touches_to_df, get_bouts_from_df
@@ -31,18 +30,9 @@ def main():
 
     bouts = get_bouts_from_df(main_df)
     print("Analyzing bouts: ")
-    for _, bout in bouts.iterrows():
-        left = bout["Left Fencer"]
-        right = bout["Right Fencer"]
-        print(f"--- {left} vs {right} ---")
-        bout_df = cast(
-            pd.DataFrame,
-            main_df[
-                (main_df["Left Fencer"] == left) & (main_df["Right Fencer"] == right)
-            ],
-        )
-        metrics = MetricsCalculator(CsvFencerActionProvider(FENCER, bout_df))
-        for metric in metrics.calculate():
+    for bout in bouts:
+        print(bout.get_summary())
+        for metric in bout.get_metrics(bout.left == FENCER):
             print(metric)
         print()
 
