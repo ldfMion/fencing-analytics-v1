@@ -1,18 +1,18 @@
-from typing import Literal
+from typing import Literal, cast
 
+import actions
 import pandas as pd
-
 from fencer_action_provider import FencerActionProvider
 
 
 class CsvFencerActionProvider(FencerActionProvider):
     def __init__(self, fencer_name: str, df: pd.DataFrame):
-        self._df = df
         super().__init__(fencer_name)
         required_columns = {"Side", "Action", "Response", "Left Fencer", "Right Fencer"}
         missing = required_columns - set(df.columns)
         if missing:
             raise ValueError(f"Missing required columns: {missing}")
+        self._df = cast(pd.DataFrame, df[df["Action"].notna()])
 
     def attacks_scored(self):
         return count(self._points_scored_mask() & self._filter_attacks())
@@ -77,25 +77,28 @@ class CsvFencerActionProvider(FencerActionProvider):
         return self._filter_side("R")
 
     def _filter_attacks(self):
-        return self._df["Action"].str.contains("A", case=True, na=False)
+        return self._df["Action"].str.contains(actions.ATTACK, case=True, na=False)
 
     def _filter_counter_attacks(self):
-        return self._df["Action"].str.contains("C", case=True, na=False)
+        return self._df["Action"].apply(actions.is_counter_attack)
 
     def _filter_ripostes(self):
-        return self._df["Action"].str.contains("R", case=True, na=False)
+        return self._df["Action"].apply(actions.is_riposte)
 
     def _filter_parries(self):
-        return self._df["Response"] == "P"
+        return self._notna_response().apply(actions.is_parry)
 
     def _filter_counter_attack_responses(self):
-        return self._df["Response"].str.contains("C", na=False)
+        return self._notna_response().apply(actions.is_counter_attack)
 
     def _filter_left_fencer(self):
         return self._df["Left Fencer"] == self._fencer_name
 
     def _filter_right_fencer(self):
         return self._df["Right Fencer"] == self._fencer_name
+
+    def _notna_response(self):
+        return cast(pd.DataFrame, self._df[self._df["Response"].notna()])["Response"]
 
     def _points_scored_mask(self):
         left_scored = self._filter_left_actions() & self._filter_left_fencer()

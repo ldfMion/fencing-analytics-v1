@@ -67,7 +67,16 @@ Received Distribution:
 Attacks: 0 (0.0), Counter Attacks: 1 (1.0), Ripostes: 0 (0.0)
 
 Analyzing bouts: 
---- Mion vs McIsaac ---
+Mion vs McIsaac (08/11/25)---
+
+        Cc
+Cc
+Cc
+Cc
+Cc
+        Cc
+Aan (P)
+
 Attack Effectiveness: 0.5
 Defense Effectiveness: N/A
 Riposte-to-Parry Ratio: N/A
@@ -84,7 +93,15 @@ Attacks: 1 (0.2), Counter Attacks: 4 (0.8), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 0 (0.0), Counter Attacks: 2 (1.0), Ripostes: 0 (0.0)
 
---- Mion vs Orowicz ---
+Mion vs Orowicz (08/11/25)---
+
+A (P)
+A (P)
+        A (Csh)
+A (Cc)
+A (Cc)
+cR (Rr)
+
 Attack Effectiveness: N/A
 Defense Effectiveness: 1.0
 Riposte-to-Parry Ratio: 1.0
@@ -101,7 +118,16 @@ Attacks: 4 (0.8), Counter Attacks: 0 (0.0), Ripostes: 1 (0.2)
 Received Distribution: 
 Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
---- Mion vs Chin ---
+Mion vs Chin (08/11/25)---
+
+Ar
+cR (Ar)
+Cc
+        Cc
+        R (P)
+Cc
+Ar
+
 Attack Effectiveness: 1.0
 Defense Effectiveness: N/A
 Riposte-to-Parry Ratio: 1.0
@@ -118,7 +144,17 @@ Attacks: 2 (0.4), Counter Attacks: 2 (0.4), Ripostes: 1 (0.2)
 Received Distribution: 
 Attacks: 0 (0.0), Counter Attacks: 1 (0.5), Ripostes: 1 (0.5)
 
---- Mion vs Fukuda ---
+Mion vs Fukuda (08/11/25)---
+
+A (Cc)
+A (Ap)
+        R (Ar)
+        A (P)
+Cc
+A (P)
+        A (A)
+Cc
+
 Attack Effectiveness: 3.0
 Defense Effectiveness: 1.0
 Riposte-to-Parry Ratio: 0.0
@@ -135,7 +171,17 @@ Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 
---- Mion vs Burke ---
+Mion vs Burke (08/11/25)---
+
+        Ar
+        R (Ar)
+R (Ar)
+cR (Rr)
+A (Ap)
+        A (Ap)
+Ap (A)
+Ap (A)
+
 Attack Effectiveness: 3.0
 Defense Effectiveness: 1.0
 Riposte-to-Parry Ratio: 1.0
@@ -152,7 +198,15 @@ Attacks: 3 (0.6), Counter Attacks: 0 (0.0), Ripostes: 2 (0.4)
 Received Distribution: 
 Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 
---- Mion vs Wu ---
+Mion vs Wu (08/11/25)---
+
+        A (P)
+Cc
+        R (P)
+        Cc
+        Cc
+        R (P)
+
 Attack Effectiveness: 0.0
 Defense Effectiveness: 1.0
 Riposte-to-Parry Ratio: 0.0
@@ -169,7 +223,16 @@ Attacks: 0 (0.0), Counter Attacks: 1 (1.0), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 1 (0.2), Counter Attacks: 2 (0.4), Ripostes: 2 (0.4)
 
---- Mion vs Zhang ---
+Mion vs Zhang (08/11/25)---
+
+Cc
+        A (P)
+A (Cc)
+Ar
+R (Ar)
+        Ar
+Ap
+
 Attack Effectiveness: N/A
 Defense Effectiveness: 1.0
 Riposte-to-Parry Ratio: 0.5
@@ -186,7 +249,17 @@ Attacks: 3 (0.6), Counter Attacks: 1 (0.2), Ripostes: 1 (0.2)
 Received Distribution: 
 Attacks: 2 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
---- Mion vs Graham ---
+Mion vs Graham (08/11/25)---
+
+Ar
+        A (P)
+        R (P)
+R (A)
+        A (A)
+        Rrr
+Ap
+        Arr
+
 Attack Effectiveness: 1.0
 Defense Effectiveness: 0.33
 Riposte-to-Parry Ratio: 0.5
@@ -203,7 +276,17 @@ Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 Received Distribution: 
 Attacks: 3 (0.6), Counter Attacks: 0 (0.0), Ripostes: 2 (0.4)
 
---- Mion vs Chen, Andrew ---
+Mion vs Chen, Andrew (08/11/25)---
+
+A (P)
+Crr
+Cc
+Ar
+        Ap (P)
+        cRrr
+        A (Cc)
+Cc
+
 Attack Effectiveness: 2.0
 Defense Effectiveness: 1.5
 Riposte-to-Parry Ratio: 0.0
@@ -220,7 +303,18 @@ Attacks: 2 (0.4), Counter Attacks: 3 (0.6), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
 
---- Mion vs Oh, Sean ---
+Mion vs Oh, Sean (08/11/25)---
+
+Cc
+        Cc
+A (P)
+A (A)
+        A (P)
+        A (Cc)
+A (P)
+        Ar
+Af (Cd)
+
 Attack Effectiveness: 4.0
 Defense Effectiveness: 0.33
 Riposte-to-Parry Ratio: 0.0
@@ -237,7 +331,16 @@ Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 3 (0.75), Counter Attacks: 1 (0.25), Ripostes: 0 (0.0)
 
---- Mion vs Morais ---
+Mion vs Morais (09/11/25)---
+
+        A (P)
+        A (Cc)
+Cc
+        Cc
+A (P)
+        A (Cc)
+        Cc
+
 Attack Effectiveness: 0.5
 Defense Effectiveness: 0.33
 Riposte-to-Parry Ratio: 0.0
@@ -254,7 +357,14 @@ Attacks: 1 (0.5), Counter Attacks: 1 (0.5), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
 
---- Mion vs Stanley ---
+Mion vs Stanley (09/11/25)---
+
+        R (Ar)
+        R (P)
+        Cc (A)
+        Cc (A)
+        Cc (A)
+
 Attack Effectiveness: 0.0
 Defense Effectiveness: N/A
 Riposte-to-Parry Ratio: N/A
@@ -271,7 +381,19 @@ Attacks: 0 (N/A), Counter Attacks: 0 (N/A), Ripostes: 0 (N/A)
 Received Distribution: 
 Attacks: 0 (0.0), Counter Attacks: 3 (0.6), Ripostes: 2 (0.4)
 
---- Mion vs Li, Brandon ---
+Mion vs Li, Brandon (09/11/25)---
+
+        A (Cc)
+A (P)
+Cc
+        cR (P)
+R (Ar)
+        A (P)
+        Arr
+A (Ap)
+yc
+rc
+
 Attack Effectiveness: 2.0
 Defense Effectiveness: 0.67
 Riposte-to-Parry Ratio: 0.5
@@ -288,7 +410,16 @@ Attacks: 2 (0.5), Counter Attacks: 1 (0.25), Ripostes: 1 (0.25)
 Received Distribution: 
 Attacks: 3 (0.75), Counter Attacks: 0 (0.0), Ripostes: 1 (0.25)
 
---- Mion vs Um ---
+Mion vs Um (09/11/25)---
+
+        Ar
+        Arrr
+        Cc
+A (Cc)
+        A (P)
+A (Cc)
+        A (Cc)
+
 Attack Effectiveness: 2.0
 Defense Effectiveness: 0.0
 Riposte-to-Parry Ratio: 0.0
@@ -305,7 +436,16 @@ Attacks: 2 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
 
---- Mion vs Lee, Jacob ---
+Mion vs Lee, Jacob (09/11/25)---
+
+A (P)
+cRr
+A (A)
+Ar
+        Rr
+        A (D)
+Ar
+
 Attack Effectiveness: 4.0
 Defense Effectiveness: 1.0
 Riposte-to-Parry Ratio: 1.0
@@ -322,7 +462,17 @@ Attacks: 4 (0.8), Counter Attacks: 0 (0.0), Ripostes: 1 (0.2)
 Received Distribution: 
 Attacks: 1 (0.5), Counter Attacks: 0 (0.0), Ripostes: 1 (0.5)
 
---- Mion vs Baumstein ---
+Mion vs Baumstein (09/11/25)---
+
+Cc
+        A (Cc)
+        Cc
+cR (P)
+Ar
+Cr
+        A (P)
+        Ap
+
 Attack Effectiveness: 1.0
 Defense Effectiveness: 0.67
 Riposte-to-Parry Ratio: 0.0
@@ -339,7 +489,15 @@ Attacks: 1 (0.33), Counter Attacks: 2 (0.67), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 3 (0.75), Counter Attacks: 1 (0.25), Ripostes: 0 (0.0)
 
---- Mion vs Bruk ---
+Mion vs Bruk (09/11/25)---
+
+        Ap
+        A (Cc)
+        A (P)
+        A (P)
+A (P)
+        Ap
+
 Attack Effectiveness: N/A
 Defense Effectiveness: 0.0
 Riposte-to-Parry Ratio: 0.0
@@ -356,7 +514,14 @@ Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 Received Distribution: 
 Attacks: 5 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
---- Mion vs Tsimiklis ---
+Mion vs Tsimiklis (09/11/25)---
+
+        Ar
+        A (Csh)
+        Ap
+        A (Cc)
+        Ar
+
 Attack Effectiveness: N/A
 Defense Effectiveness: 0.0
 Riposte-to-Parry Ratio: N/A
@@ -373,7 +538,18 @@ Attacks: 0 (N/A), Counter Attacks: 0 (N/A), Ripostes: 0 (N/A)
 Received Distribution: 
 Attacks: 5 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
 
---- Mion vs Lee, Aidan ---
+Mion vs Lee, Aidan (09/11/25)---
+
+        Ar
+        Abt
+Ar
+A (A)
+        Ar
+R (P)
+Rr
+        Ap (A)
+        Cc (A)
+
 Attack Effectiveness: 2.0
 Defense Effectiveness: 0.5
 Riposte-to-Parry Ratio: 1.0

@@ -1,12 +1,7 @@
-from typing import cast
-
 import pandas as pd
-from csv_fencer_action_provider import CsvFencerActionProvider
-from metrics import MetricsCalculator
+from config import FENCER, FILENAME
 from process_df import add_touches_to_df, get_bouts_from_df
-
-FILENAME = "Elite Invitationals 2025 Analytics.csv"
-FENCER = "Mion"
+from services import create_metrics_report
 
 
 def main():
@@ -21,8 +16,7 @@ def main():
     }
 
     for name, df in sources.items():
-        metrics = MetricsCalculator(CsvFencerActionProvider(FENCER, df))
-        result = metrics.calculate()
+        result = create_metrics_report(df, FENCER)
         print(f"------- Analysis: {name} --------")
         for metric in result:
             print(metric)
