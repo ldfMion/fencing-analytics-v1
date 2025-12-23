@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Callable, Dict, List
 
-from fencer_action_provider import FencerActionProvider
+from actions import Action
+from csv_fencer_action_provider import CsvFencerActionProvider
 
 
 class Metric(ABC):
@@ -54,141 +55,137 @@ class DistributionMetric(Metric):
 
 
 class MetricsCalculator:
-    def __init__(self, p: FencerActionProvider):
+    def __init__(self, p: CsvFencerActionProvider):
         self._p = p
 
     def calculate(self):
         return [str(metric) for metric in self._metrics()]
 
     def _metrics(self) -> List[Metric]:
+        p = self._p
         return [
             NumericalMetric(
                 "Attack Effectiveness",
-                lambda: self._p.attacks_scored()
-                / (self._p.counter_attacks_received() + self._p.ripostes_received()),
+                lambda: p.scored(lambda a: a.is_scoring_attack())
+                / p.received(lambda a: a.is_failing_attack()),
             ),
             NumericalMetric(
                 "Defense Effectiveness",
-                lambda: (self._p.counter_attacks_scored() + self._p.ripostes_scored())
-                / self._p.attacks_received(),
+                lambda: (
+                    p.scored(lambda a: a.is_scoring_defense())
+                    / p.received(lambda a: a.is_failing_defense())
+                ),
             ),
             NumericalMetric(
                 "Riposte-to-Parry Ratio",
-                lambda: self._p.ripostes_scored()
-                / (self._p.ripostes_scored() + self._p.attacks_received_from_parries()),
+                lambda: p.scored(Action.is_scoring_riposte)
+                / (
+                    p.scored(Action.is_scoring_riposte)
+                    + p.received(Action.is_failing_parry)
+                ),
             ),
             NumericalMetric(
                 "Counter-Attack Effectiveness",
-                lambda: self._p.counter_attacks_scored()
+                lambda: p.scored(Action.is_scoring_counter_attack)
                 / (
-                    self._p.counter_attacks_scored()
-                    + self._p.attacks_received_from_counter_attacks()
+                    p.scored(Action.is_scoring_counter_attack)
+                    + p.received(Action.is_failing_counter_attack)
                 ),
             ),
             NumericalMetric(
+                # ratio of offense to defense
                 "Aggression",
                 lambda: (
-                    self._p.attacks_scored()
-                    + self._p.counter_attacks_received()
-                    + self._p.ripostes_received()
+                    p.scored(Action.is_scoring_attack)
+                    + p.received(Action.is_failing_attack)
                 )
                 / (
-                    self._p.counter_attacks_scored()
-                    + self._p.attacks_received_from_counter_attacks()
-                    + self._p.ripostes_scored()
-                    + self._p.attacks_received_from_parries()
+                    p.received(Action.is_failing_defense)
+                    + p.scored(Action.is_scoring_defense)
                 ),
             ),
             NumericalMetric(
-                "Attack vs Counter-Attack Efficiency",
-                lambda: self._p.attacks_scored_from_counter_attacks()
+                "Attack Success Rate vs Counter-Attack",
+                lambda: p.scored(Action.is_failing_counter_attack)
                 / (
-                    self._p.counter_attacks_received()
-                    + self._p.attacks_scored_from_counter_attacks()
+                    p.received(Action.is_scoring_counter_attack)
+                    + p.scored(Action.is_failing_counter_attack)
                 ),
             ),
             NumericalMetric(
-                "Attack vs Parry Efficiency",
-                lambda: self._p.attacks_scored_from_parries()
-                / (self._p.attacks_scored_from_parries() + self._p.ripostes_received()),
+                "Attack Success Rate vs Parry",
+                lambda: p.scored(Action.is_failing_parry)
+                / (
+                    p.scored(Action.is_failing_parry)
+                    + p.received(Action.is_scoring_riposte)
+                ),
             ),
             NumericalMetric(
                 "Offense EV",
                 lambda: (
-                    self._p.attacks_scored()
-                    / (
-                        self._p.attacks_scored()
-                        + self._p.counter_attacks_received()
-                        + self._p.ripostes_received()
+                    (
+                        p.scored(Action.is_scoring_attack)
+                        - p.received(Action.is_failing_attack)
                     )
-                )
-                - (
-                    (self._p.counter_attacks_received() + self._p.ripostes_received())
                     / (
-                        self._p.attacks_scored()
-                        + self._p.counter_attacks_received()
-                        + self._p.ripostes_received()
+                        p.scored(Action.is_scoring_attack)
+                        + p.received(Action.is_failing_attack)
                     )
                 ),
             ),
             NumericalMetric(
                 "Defense EV",
                 lambda: (
-                    (self._p.counter_attacks_scored() + self._p.ripostes_scored())
-                    / (
-                        self._p.counter_attacks_scored()
-                        + self._p.ripostes_scored()
-                        + self._p.attacks_received()
-                    )
+                    p.scored(Action.is_scoring_defense)
+                    - p.received(Action.is_failing_defense)
                 )
-                - (
-                    self._p.attacks_received()
-                    / (
-                        self._p.counter_attacks_scored()
-                        + self._p.ripostes_scored()
-                        + self._p.attacks_received()
-                    )
+                / (
+                    p.scored(Action.is_scoring_defense)
+                    + p.received(Action.is_failing_defense)
                 ),
             ),
             DistributionMetric(
                 "Action Distribution",
                 distribution_calc=lambda: {
-                    "Attacks": self._p.attacks_scored()
-                    + self._p.counter_attacks_received()
-                    + self._p.ripostes_received(),
-                    "Counter Attacks": self._p.attacks_received_from_counter_attacks()
-                    + self._p.counter_attacks_scored(),
-                    "Parries": self._p.ripostes_scored()
-                    + self._p.attacks_received_from_parries(),
+                    "Attacks": p.scored(Action.is_scoring_attack)
+                    + p.received(Action.is_failing_attack),
+                    "Counter Attacks": p.scored(Action.is_scoring_counter_attack)
+                    + p.received(Action.is_failing_counter_attack),
+                    "Parries": p.scored(Action.is_scoring_riposte)
+                    + p.received(Action.is_failing_parry),
                 },
-                total_calc=lambda: self._p.attacks_scored()
-                + self._p.counter_attacks_received()
-                + self._p.ripostes_received()
-                + self._p.attacks_received_from_counter_attacks()
-                + self._p.counter_attacks_scored()
-                + self._p.ripostes_scored()
-                + self._p.attacks_received_from_parries(),
+                # this isn't the total actions because it doesn't include cards
+                total_calc=lambda: p.scored(Action.is_scoring_attack)
+                + p.received(Action.is_failing_attack)
+                + p.scored(Action.is_scoring_counter_attack)
+                + p.received(Action.is_failing_counter_attack)
+                + p.scored(Action.is_scoring_riposte)
+                + p.received(Action.is_failing_parry),
             ),
             DistributionMetric(
                 "Scored Distribution",
                 distribution_calc=lambda: {
-                    "Attacks": self._p.attacks_scored(),
-                    "Counter Attacks": self._p.counter_attacks_scored(),
-                    "Ripostes": self._p.ripostes_scored(),
+                    "Attacks": p.scored(Action.is_scoring_attack),
+                    "Counter Attacks": p.scored(Action.is_scoring_counter_attack),
+                    "Ripostes": p.scored(Action.is_scoring_riposte),
                 },
-                total_calc=lambda: self._p.attacks_scored()
-                + self._p.counter_attacks_scored()
-                + self._p.ripostes_scored(),
+                total_calc=lambda: p.scored(
+                    lambda a: a.is_scoring_attack()
+                    and a.is_scoring_counter_attack()
+                    and a.is_scoring_riposte()
+                ),
             ),
             DistributionMetric(
                 "Received Distribution",
                 distribution_calc=lambda: {
-                    "Attacks": self._p.attacks_received(),
-                    "Counter Attacks": self._p.counter_attacks_received(),
-                    "Ripostes": self._p.ripostes_received(),
+                    "Attacks": p.received(Action.is_scoring_attack),
+                    "Counter Attacks": p.received(Action.is_scoring_counter_attack),
+                    "Ripostes": p.received(Action.is_scoring_riposte),
                 },
-                total_calc=lambda: self._p.attacks_received()
-                + self._p.counter_attacks_received()
-                + self._p.ripostes_received(),
+                total_calc=lambda: p.received(
+                    lambda a: a.is_scoring_attack()
+                    and a.is_scoring_counter_attack()
+                    and a.is_scoring_riposte()
+                ),
             ),
         ]

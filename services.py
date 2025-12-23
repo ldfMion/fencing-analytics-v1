@@ -1,4 +1,5 @@
 import pandas as pd
+
 from csv_fencer_action_provider import CsvFencerActionProvider
 from metrics import MetricsCalculator
 

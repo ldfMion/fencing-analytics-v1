@@ -1,19 +1,56 @@
-from typing import Literal, cast
+from typing import Callable, Literal, cast
+
+import pandas as pd
 
 import actions
-import pandas as pd
-from fencer_action_provider import FencerActionProvider
+
+# from fencer_action_provider import FencerActionProvider
 
 
-class CsvFencerActionProvider(FencerActionProvider):
+class CsvFencerActionProvider:
     def __init__(self, fencer_name: str, df: pd.DataFrame):
-        super().__init__(fencer_name)
+        self._fencer_name = fencer_name
         required_columns = {"Side", "Action", "Response", "Left Fencer", "Right Fencer"}
         missing = required_columns - set(df.columns)
         if missing:
             raise ValueError(f"Missing required columns: {missing}")
         self._df = cast(pd.DataFrame, df[df["Action"].notna()])
 
+    def scored(self, action_filter: Callable[[actions.Action], bool]):
+        return count(self._points_scored_mask() & self._filter_actions(action_filter))
+
+    def received(self, action_filter: Callable[[actions.Action], bool]):
+        return count(self._points_received_mask() & self._filter_actions(action_filter))
+
+    def _filter_actions(self, action_filter: Callable[[actions.Action], bool]):
+        return self._df.apply(lambda row: action_filter(build_action(row)), axis=1)
+
+    def _points_scored_mask(self):
+        left_scored = self._filter_left_actions() & self._filter_left_fencer()
+        right_scored = self._filter_right_actions() & self._filter_right_fencer()
+        return left_scored | right_scored
+
+    def _points_received_mask(self):
+        left_received = self._filter_left_actions() & self._filter_right_fencer()
+        right_received = self._filter_right_actions() & self._filter_left_fencer()
+        return left_received | right_received
+
+    def _filter_left_actions(self):
+        return self._filter_side("L")
+
+    def _filter_right_actions(self):
+        return self._filter_side("R")
+
+    def _filter_left_fencer(self):
+        return self._df["Left Fencer"] == self._fencer_name
+
+    def _filter_right_fencer(self):
+        return self._df["Right Fencer"] == self._fencer_name
+
+    def _filter_side(self, side: Literal["L", "R"]):
+        return self._df["Side"] == side
+
+    """
     def attacks_scored(self):
         return count(self._points_scored_mask() & self._filter_attacks())
 
@@ -67,17 +104,10 @@ class CsvFencerActionProvider(FencerActionProvider):
 
     # --- private methods ---
 
-    def _filter_side(self, side: Literal["L", "R"]):
-        return self._df["Side"] == side
 
-    def _filter_left_actions(self):
-        return self._filter_side("L")
-
-    def _filter_right_actions(self):
-        return self._filter_side("R")
 
     def _filter_attacks(self):
-        return self._df["Action"].str.contains(actions.ATTACK, case=True, na=False)
+        return self._df["Action"].apply(actions.is_attack)
 
     def _filter_counter_attacks(self):
         return self._df["Action"].apply(actions.is_counter_attack)
@@ -91,25 +121,18 @@ class CsvFencerActionProvider(FencerActionProvider):
     def _filter_counter_attack_responses(self):
         return self._notna_response().apply(actions.is_counter_attack)
 
-    def _filter_left_fencer(self):
-        return self._df["Left Fencer"] == self._fencer_name
-
-    def _filter_right_fencer(self):
-        return self._df["Right Fencer"] == self._fencer_name
 
     def _notna_response(self):
         return cast(pd.DataFrame, self._df[self._df["Response"].notna()])["Response"]
-
-    def _points_scored_mask(self):
-        left_scored = self._filter_left_actions() & self._filter_left_fencer()
-        right_scored = self._filter_right_actions() & self._filter_right_fencer()
-        return left_scored | right_scored
-
-    def _points_received_mask(self):
-        left_received = self._filter_left_actions() & self._filter_right_fencer()
-        right_received = self._filter_right_actions() & self._filter_left_fencer()
-        return left_received | right_received
+    """
 
 
 def count(mask: pd.Series):
     return int(mask.sum())
+
+
+def build_action(row: pd.Series):
+    return actions.Action(
+        str(row["Action"]),
+        None if pd.isna(row["Response"]) else str(row["Response"]),
+    )
