@@ -1,8 +1,4 @@
-from typing import cast
-
 import pandas as pd
-
-from bout import Bout
 
 
 def add_touches_to_df(df: pd.DataFrame):
@@ -33,17 +29,3 @@ def add_touches_to_df(df: pd.DataFrame):
     df = df.drop(columns=["scored", "left_score_touch", "right_score_touch"])
 
     return df
-
-
-def get_bouts_from_df(df: pd.DataFrame):
-    only_fencers = df[["Left Fencer", "Right Fencer", "Date"]]
-    unique_triples = only_fencers.drop_duplicates()
-    return [
-        Bout(
-            row["Left Fencer"],  # pyright: ignore[reportArgumentType]
-            row["Right Fencer"],  # pyright: ignore[reportArgumentType]
-            row["Date"],  # pyright: ignore[reportArgumentType]
-            df,
-        )
-        for _, row in unique_triples.iterrows()
-    ]

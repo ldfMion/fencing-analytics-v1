@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Callable, Dict, List
 
 from actions import Action
-from csv_fencer_action_provider import CsvFencerActionProvider
+from fencer_action_provider import FencerActionProvider
 
 
 class Metric(ABC):
@@ -55,7 +55,7 @@ class DistributionMetric(Metric):
 
 
 class MetricsCalculator:
-    def __init__(self, p: CsvFencerActionProvider):
+    def __init__(self, p: FencerActionProvider):
         self._p = p
 
     def calculate(self):

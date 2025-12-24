@@ -1,39 +1,25 @@
 from abc import ABC, abstractmethod
-from typing import Callable
+from enum import Enum, auto
+from typing import Callable, List, Tuple
 
-IntFunc = Callable[[], int]
+from actions import Action
 
 
 class FencerActionProvider(ABC):
-    def __init__(self, fencer_name: str):
-        self._fencer_name = fencer_name
+    @abstractmethod
+    def scored(self, action_filter: Callable[[Action], bool]) -> int: ...
 
     @abstractmethod
-    def attacks_scored(self) -> int: ...
+    def received(self, action_filter: Callable[[Action], bool]) -> int: ...
 
-    @abstractmethod
-    def attacks_received(self) -> int: ...
 
-    @abstractmethod
-    def counter_attacks_scored(self) -> int: ...
+class ActionOutcome(Enum):
+    FOR = auto()
+    AGAINST = auto()
 
-    @abstractmethod
-    def counter_attacks_received(self) -> int: ...
 
+class OrderedFencerActionProvider(FencerActionProvider):
     @abstractmethod
-    def ripostes_scored(self) -> int: ...
-
-    @abstractmethod
-    def ripostes_received(self) -> int: ...
-
-    @abstractmethod
-    def attacks_received_from_parries(self) -> int: ...
-
-    @abstractmethod
-    def attacks_received_from_counter_attacks(self) -> int: ...
-
-    @abstractmethod
-    def attacks_scored_from_parries(self) -> int: ...
-
-    @abstractmethod
-    def attacks_scored_from_counter_attacks(self) -> int: ...
+    def get_actions(
+        self,
+    ) -> List[Tuple[Tuple[Action, ActionOutcome], Tuple[Action, ActionOutcome]]]: ...

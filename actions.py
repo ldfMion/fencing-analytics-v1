@@ -6,6 +6,8 @@ PARRY = "P"
 RIPOSTE = "R"
 PREP = "Ap"
 
+ATTACK_RENEWAL = "Ar"
+
 
 @dataclass
 class Action:
@@ -26,6 +28,7 @@ class Action:
             self.is_scoring_counter_attack()
             or self.is_scoring_riposte()
             or self.is_simultaneous_attack()
+            or self.is_attack_on_prep()
         )
 
     def is_simultaneous_attack(self):
@@ -36,7 +39,7 @@ class Action:
         )
 
     def is_attack_on_prep(self):
-        return
+        return is_prep(self.action)
 
     def is_scoring_defense(self):
         return self.is_scoring_counter_attack() or self.is_scoring_riposte()
@@ -52,6 +55,8 @@ class Action:
         return is_counter_attack(self.response)
 
     def is_failing_parry(self):
+        if is_attack_renewal(self.action):
+            return True
         if self.response is None:
             return False
         return is_parry(self.response)
@@ -75,3 +80,7 @@ def is_parry(response: str):
 
 def is_prep(action: str):
     return PREP in action
+
+
+def is_attack_renewal(action: str):
+    return ATTACK_RENEWAL in action

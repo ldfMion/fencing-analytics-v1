@@ -2,8 +2,6 @@ from typing import cast
 
 import pandas as pd
 
-from csv_fencer_action_provider import CsvFencerActionProvider
-from metrics import MetricsCalculator
 from services import create_metrics_report
 
 
