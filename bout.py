@@ -2,8 +2,6 @@ from typing import cast
 
 import pandas as pd
 
-from services import create_metrics_report
-
 
 class Bout:
     left: str
@@ -20,6 +18,7 @@ class Bout:
             main_df[
                 (main_df["Left Fencer"] == self.left)
                 & (main_df["Right Fencer"] == self.right)
+                & (main_df["Date"] == self.date)
             ],
         )
 
@@ -36,6 +35,11 @@ class Bout:
                 summary += text + "\n"
         return summary
 
-    def get_metrics(self, left_fencer: bool):
-        fencer = self.left if left_fencer else self.right
-        return create_metrics_report(self.bout_df, fencer)
+    # def get_metrics(self, left_fencer: bool):
+    #     fencer = self.left if left_fencer else self.right
+    #     return create_metrics_report(self.bout_df, fencer)
+
+    def score(self):
+        last_row = self.bout_df.iloc[-1]
+        print(self.bout_df)
+        return (last_row["Left Score"], last_row["Right Score"])

@@ -144,6 +144,16 @@ class MetricsCalculator:
                     + p.received(Action.is_failing_defense)
                 ),
             ),
+            NumericalMetric(
+                "No-priority Share",  # % actions attempted without priority
+                lambda: (
+                    (
+                        p.scored(lambda a: not a.is_scoring_priority())
+                        + p.received(lambda a: not a.is_failing_priority())
+                    )
+                    / (p.scored(lambda a: True) + p.received(lambda a: True))
+                ),
+            ),
             DistributionMetric(
                 "Action Distribution",
                 distribution_calc=lambda: {

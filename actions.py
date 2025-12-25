@@ -7,6 +7,7 @@ RIPOSTE = "R"
 PREP = "Ap"
 
 ATTACK_RENEWAL = "Ar"
+RENEWAL = "r"
 
 
 @dataclass
@@ -61,6 +62,20 @@ class Action:
             return False
         return is_parry(self.response)
 
+    def is_scoring_priority(self):
+        if self.is_scoring_counter_attack():
+            return False
+        if is_renewal(self.action):
+            return False
+        return True
+
+    def is_failing_priority(self):
+        if self.is_failing_counter_attack():
+            return False
+        if self.response is not None:
+            return not is_renewal(self.response)
+        return True
+
 
 def is_attack(action: str):
     return ATTACK in action
@@ -84,3 +99,7 @@ def is_prep(action: str):
 
 def is_attack_renewal(action: str):
     return ATTACK_RENEWAL in action
+
+
+def is_renewal(action: str):
+    return RENEWAL in action
