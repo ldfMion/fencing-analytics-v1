@@ -1,15 +1,28 @@
+from typing import List
 import pandas as pd
 
+from bout import Bout
+from models import BoutData
+from constants import DATE, LEFT_SCORE, RIGHT_SCORE
 from create_metrics_report import create_metrics_report
-from get_bouts_from_df import get_bouts_from_df
+from create_bout_metrics_report import create_bout_metrics_report
+from data_loader import load_bouts_from_df
+from bout_provider import get_bouts
 
 
 def analyze_fencer(main_df: pd.DataFrame, fencer_name: str):
+    """
+    Performs analysis on a fencer's performance.
+
+    Args:
+        main_df: The main DataFrame containing all bout data.
+        fencer_name: The name of the fencer to analyze.
+    """
     sources = {
         "overall": main_df,
-        "Day 1": main_df[main_df["Date"] == "08/11/25"],
-        "Day 2": main_df[main_df["Date"] == "09/11/25"],
-        "4-4": main_df[(main_df["Left Score"] == 4) & (main_df["Right Score"] == 4)],
+        "Day 1": main_df[main_df[DATE] == "08/11/25"],
+        "Day 2": main_df[main_df[DATE] == "09/11/25"],
+        "4-4": main_df[(main_df[LEFT_SCORE] == 4) & (main_df[RIGHT_SCORE] == 4)],
     }
 
     for name, df in sources.items():
@@ -19,10 +32,23 @@ def analyze_fencer(main_df: pd.DataFrame, fencer_name: str):
             print(metric)
         print()
 
-    bouts = get_bouts_from_df(main_df)
+    bout_data_list = load_bouts_from_df(main_df)
+    bouts = get_bouts(bout_data_list)
+    analyze_bouts(bouts, fencer_name)
+
+
+def analyze_bouts(bouts: List[Bout], fencer_name: str):
+    """
+    Performs analysis on a list of bouts.
+
+    Args:
+        bouts: A list of Bout objects.
+        fencer_name: The name of the fencer to analyze.
+    """
     print("Analyzing bouts: ")
     for bout in bouts:
         print(bout.get_summary())
-        for metric in bout.get_metrics(bout.left == fencer_name):
+        result = create_bout_metrics_report(bout._bout_data, fencer_name)
+        for metric in result:
             print(metric)
         print()

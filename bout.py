@@ -1,45 +1,65 @@
-from typing import cast
+from typing import Tuple, List
 
-import pandas as pd
+from models import BoutData
 
 
 class Bout:
-    left: str
-    right: str
-    date: str
-    bout_df: pd.DataFrame
+    """
+    Represents a single fencing bout between two fencers on a specific date.
+    """
 
-    def __init__(self, left: str, right: str, date: str, main_df: pd.DataFrame):
-        self.left = left
-        self.right = right
-        self.date = date
-        self.bout_df = cast(
-            pd.DataFrame,
-            main_df[
-                (main_df["Left Fencer"] == self.left)
-                & (main_df["Right Fencer"] == self.right)
-                & (main_df["Date"] == self.date)
-            ],
-        )
+    def __init__(self, bout_data: BoutData):
+        """
+        Initializes a Bout object.
+
+        Args:
+            bout_data: The data for the bout.
+        """
+        self._bout_data = bout_data
+
+    @property
+    def left_fencer(self) -> str:
+        return self._bout_data.left_fencer
+
+    @property
+    def right_fencer(self) -> str:
+        return self._bout_data.right_fencer
+
+    @property
+    def date(self) -> str:
+        return self._bout_data.date
+
+    @property
+    def bout_data(self) -> BoutData:
+        return self._bout_data
 
     def get_summary(self) -> str:
-        summary = f"{self.left} vs {self.right} ({self.date})---\n\n"
-        for i, row in self.bout_df.iterrows():
-            if pd.notna(row["Action"]):  # pyright: ignore[reportGeneralTypeIssues]
-                text = f"{row['Action']}"
-                if pd.notna(row["Response"]):  # pyright: ignore[reportGeneralTypeIssues]
-                    text += f" ({row['Response']})"
-                if row["Side"] == "R":
-                    pad = len(self.left) + 4 + len(text)
+        """
+        Generates a string summary of the bout, showing the actions and responses.
+
+        Returns:
+            A formatted string with the bout's summary.
+        """
+        summary = f"{self.left_fencer} vs {self.right_fencer} ({self.date})---\n\n"
+        for touch in self._bout_data.touches:
+            action = touch.action.action
+            response = touch.action.response
+            if action:
+                text = f"{action}"
+                if response:
+                    text += f" ({response})"
+                if touch.side == "R":
+                    pad = len(self.left_fencer) + 4 + len(text)
                     text = text.rjust(pad, " ")
                 summary += text + "\n"
         return summary
 
-    # def get_metrics(self, left_fencer: bool):
-    #     fencer = self.left if left_fencer else self.right
-    #     return create_metrics_report(self.bout_df, fencer)
+    def score(self) -> Tuple[int, int]:
+        """
+        Returns the final score of the bout.
 
-    def score(self):
-        last_row = self.bout_df.iloc[-1]
-        print(self.bout_df)
-        return (last_row["Left Score"], last_row["Right Score"])
+        Returns:
+            A tuple containing the left fencer's score and the right fencer's score.
+        """
+        last_touch = self._bout_data.touches[-1]
+        return (last_touch.left_score, last_touch.right_score)
