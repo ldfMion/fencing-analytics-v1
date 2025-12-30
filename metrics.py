@@ -57,21 +57,20 @@ class DistributionMetric(Metric):
 
 
 def attack_effectiveness(p: FencerActionProvider) -> float:
-    """Calculates the ratio of successful attacks to failed attacks."""
-    return p.scored(lambda a: a.is_scoring_attack()) / p.received(
-        lambda a: a.is_failing_attack()
-    )
+    scored = p.scored(Action.is_scoring_attack)
+    received = p.received(Action.is_failing_attack)
+    return scored / (scored + received)
 
 
 def defense_effectiveness(p: FencerActionProvider) -> float:
-    """Calculates the ratio of successful defenses to failed defenses."""
-    return p.scored(lambda a: a.is_scoring_defense()) / p.received(
-        lambda a: a.is_failing_defense()
-    )
+    scored = p.scored(Action.is_scoring_defense)
+    received = p.received(Action.is_failing_defense)
+    return scored / (scored + received)
 
 
 def riposte_to_parry_ratio(p: FencerActionProvider) -> float:
     """Calculates the ratio of successful ripostes to total parries."""
+    # isn't counter counter ripostes I think
     return p.scored(Action.is_scoring_riposte) / (
         p.scored(Action.is_scoring_riposte) + p.received(Action.is_failing_parry)
     )
@@ -89,9 +88,7 @@ def aggression(p: FencerActionProvider) -> float:
     """Calculates the ratio of offensive actions to defensive actions."""
     return (
         p.scored(Action.is_scoring_attack) + p.received(Action.is_failing_attack)
-    ) / (
-        p.received(Action.is_failing_defense) + p.scored(Action.is_scoring_defense)
-    )
+    ) / (p.received(Action.is_failing_defense) + p.scored(Action.is_scoring_defense))
 
 
 def attack_success_rate_vs_counter_attack(p: FencerActionProvider) -> float:

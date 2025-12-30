@@ -1,2 +1,2 @@
-FILENAME = "Elite Invitationals 2025 Analytics.csv"
+FILENAME = "data/touches.csv"
 FENCER = "Mion"

@@ -1,13 +1,14 @@
 from typing import List
+
 import pandas as pd
 
 from bout import Bout
-from models import BoutData
-from constants import DATE, LEFT_SCORE, RIGHT_SCORE
-from create_metrics_report import create_metrics_report
-from create_bout_metrics_report import create_bout_metrics_report
-from data_loader import load_bouts_from_df
 from bout_provider import get_bouts
+from constants import DATE, LEFT_SCORE, RIGHT_SCORE
+from create_bout_metrics_report import create_bout_metrics_report
+from create_metrics_report import create_metrics_report
+from data_loader import load_bouts_from_df
+from models import BoutData
 
 
 def analyze_fencer(main_df: pd.DataFrame, fencer_name: str):
@@ -20,8 +21,10 @@ def analyze_fencer(main_df: pd.DataFrame, fencer_name: str):
     """
     sources = {
         "overall": main_df,
-        "Day 1": main_df[main_df[DATE] == "08/11/25"],
-        "Day 2": main_df[main_df[DATE] == "09/11/25"],
+        "Elites - Day 1": main_df[main_df[DATE] == "08/11/25"],
+        "Elites - Day 2": main_df[main_df[DATE] == "09/11/25"],
+        "Western - Day 1": main_df[main_df[DATE] == "22/11/25"],
+        "Western - Day 2": main_df[main_df[DATE] == "23/11/25"],
         "4-4": main_df[(main_df[LEFT_SCORE] == 4) & (main_df[RIGHT_SCORE] == 4)],
     }
 

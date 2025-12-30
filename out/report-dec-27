@@ -1,0 +1,1047 @@
+------- Analysis: overall --------
+Attack Effectiveness: 0.58
+Defense Effectiveness: 0.52
+Riposte To Parry Ratio: 0.29
+Counter Attack Effectiveness: 0.69
+Aggression: 1.14
+Attack Success Rate Vs Counter Attack: 0.46
+Attack Success Rate Vs Parry: 0.63
+Offense Ev: 0.16
+Defense Ev: 0.05
+No Priority Share: 0.35
+Action Distribution: 
+Attacks: 124 (0.51), Counter Attacks: 58 (0.24), Parries: 59 (0.24)
+Scored Distribution: 
+Attacks: 72 (0.56), Counter Attacks: 40 (0.31), Ripostes: 17 (0.13)
+Received Distribution: 
+Attacks: 62 (0.6), Counter Attacks: 22 (0.21), Ripostes: 20 (0.19)
+
+------- Analysis: Elites - Day 1 --------
+Attack Effectiveness: 0.57
+Defense Effectiveness: 0.61
+Riposte To Parry Ratio: 0.3
+Counter Attack Effectiveness: 0.82
+Aggression: 1.27
+Attack Success Rate Vs Counter Attack: 0.45
+Attack Success Rate Vs Parry: 0.6
+Offense Ev: 0.14
+Defense Ev: 0.21
+No Priority Share: 0.32
+Action Distribution: 
+Attacks: 42 (0.53), Counter Attacks: 17 (0.22), Parries: 20 (0.25)
+Scored Distribution: 
+Attacks: 24 (0.55), Counter Attacks: 14 (0.32), Ripostes: 6 (0.14)
+Received Distribution: 
+Attacks: 16 (0.53), Counter Attacks: 6 (0.2), Ripostes: 8 (0.27)
+
+------- Analysis: Elites - Day 2 --------
+Attack Effectiveness: 0.43
+Defense Effectiveness: 0.27
+Riposte To Parry Ratio: 0.2
+Counter Attack Effectiveness: 0.33
+Aggression: 1.0
+Attack Success Rate Vs Counter Attack: 0.2
+Attack Success Rate Vs Parry: 0.69
+Offense Ev: -0.13
+Defense Ev: -0.47
+No Priority Share: 0.31
+Action Distribution: 
+Attacks: 30 (0.48), Counter Attacks: 12 (0.19), Parries: 20 (0.32)
+Scored Distribution: 
+Attacks: 13 (0.62), Counter Attacks: 4 (0.19), Ripostes: 4 (0.19)
+Received Distribution: 
+Attacks: 28 (0.7), Counter Attacks: 8 (0.2), Ripostes: 4 (0.1)
+
+------- Analysis: Western - Day 1 --------
+Attack Effectiveness: 0.64
+Defense Effectiveness: 0.54
+Riposte To Parry Ratio: 0.3
+Counter Attack Effectiveness: 0.67
+Aggression: 1.0
+Attack Success Rate Vs Counter Attack: 0.6
+Attack Success Rate Vs Parry: 0.62
+Offense Ev: 0.29
+Defense Ev: 0.07
+No Priority Share: 0.39
+Action Distribution: 
+Attacks: 28 (0.5), Counter Attacks: 18 (0.32), Parries: 10 (0.18)
+Scored Distribution: 
+Attacks: 18 (0.55), Counter Attacks: 12 (0.36), Ripostes: 3 (0.09)
+Received Distribution: 
+Attacks: 14 (0.61), Counter Attacks: 6 (0.26), Ripostes: 3 (0.13)
+
+------- Analysis: Western - Day 2 --------
+Attack Effectiveness: 0.71
+Defense Effectiveness: 0.78
+Riposte To Parry Ratio: 0.44
+Counter Attack Effectiveness: 0.91
+Aggression: 1.33
+Attack Success Rate Vs Counter Attack: 0.6
+Attack Success Rate Vs Parry: 0.62
+Offense Ev: 0.42
+Defense Ev: 0.56
+No Priority Share: 0.38
+Action Distribution: 
+Attacks: 24 (0.55), Counter Attacks: 11 (0.25), Parries: 9 (0.2)
+Scored Distribution: 
+Attacks: 17 (0.55), Counter Attacks: 10 (0.32), Ripostes: 4 (0.13)
+Received Distribution: 
+Attacks: 4 (0.36), Counter Attacks: 2 (0.18), Ripostes: 5 (0.45)
+
+------- Analysis: 4-4 --------
+Attack Effectiveness: 0.75
+Defense Effectiveness: 0.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 0.0
+Aggression: 4.0
+Attack Success Rate Vs Counter Attack: 0.67
+Attack Success Rate Vs Parry: N/A
+Offense Ev: 0.5
+Defense Ev: -1.0
+No Priority Share: 0.2
+Action Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 3 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 1 (0.5), Counter Attacks: 1 (0.5), Ripostes: 0 (0.0)
+
+Analyzing bouts: 
+Grifith vs Mion (22/11/25)---
+
+yc
+rc
+Arr
+           Cc
+           A (Cc)
+           Cc
+A (Cc)
+Ar
+Csh
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 0.4
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.67
+Aggression: 0.4
+Attack Success Rate Vs Counter Attack: 0.5
+Attack Success Rate Vs Parry: N/A
+Offense Ev: 0.0
+Defense Ev: -0.2
+No Priority Share: 0.33
+Action Distribution: 
+Attacks: 2 (0.29), Counter Attacks: 3 (0.43), Parries: 2 (0.29)
+Scored Distribution: 
+Attacks: 1 (0.33), Counter Attacks: 2 (0.67), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 3 (0.5), Counter Attacks: 1 (0.17), Ripostes: 0 (0.0)
+
+Jain vs Mion (22/11/25)---
+
+        A (Cc)
+Ar
+        Cc
+        R (Ar)
+        Cc
+        A (Cc)
+
+Attack Effectiveness: 1.0
+Defense Effectiveness: 0.75
+Riposte To Parry Ratio: 0.5
+Counter Attack Effectiveness: 1.0
+Aggression: 0.5
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: N/A
+Offense Ev: 1.0
+Defense Ev: 0.5
+No Priority Share: 0.33
+Action Distribution: 
+Attacks: 2 (0.33), Counter Attacks: 2 (0.33), Parries: 2 (0.33)
+Scored Distribution: 
+Attacks: 2 (0.4), Counter Attacks: 2 (0.4), Ripostes: 1 (0.2)
+Received Distribution: 
+Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+
+Johnson vs Mion (23/11/25)---
+
+           Ap (A)
+           Cc
+           Cc
+           Cc
+           Ap
+
+Attack Effectiveness: 1.0
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 1.0
+Aggression: 0.67
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: N/A
+Offense Ev: 1.0
+Defense Ev: 1.0
+No Priority Share: 0.6
+Action Distribution: 
+Attacks: 2 (0.4), Counter Attacks: 3 (0.6), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 2 (0.4), Counter Attacks: 3 (0.6), Ripostes: 0 (0.0)
+Received Distribution: N/A
+
+Lao vs Mion (22/11/25)---
+
+       A (P)
+       A (Ap)
+       Cc
+       Cc
+       A (Cc)
+
+Attack Effectiveness: 1.0
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 1.0
+Aggression: 1.5
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 1.0
+Defense Ev: 1.0
+No Priority Share: 0.4
+Action Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
+Received Distribution: N/A
+
+Levy vs Mion (22/11/25)---
+
+Cc (A)
+        Cc
+        A (D)
+        A (Cc)
+        Cr
+        A (A)
+
+Attack Effectiveness: 0.75
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 1.0
+Aggression: 2.0
+Attack Success Rate Vs Counter Attack: 0.5
+Attack Success Rate Vs Parry: N/A
+Offense Ev: 0.5
+Defense Ev: 1.0
+No Priority Share: 0.33
+Action Distribution: 
+Attacks: 4 (0.67), Counter Attacks: 2 (0.33), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 1 (1.0), Ripostes: 0 (0.0)
+
+Li, Richard vs Mion (22/11/25)---
+
+               Cc
+               A (P)
+               R (Ar)
+Cc
+               A (A)
+Ar
+cR
+A (P)
+A (Cc)
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 0.4
+Riposte To Parry Ratio: 0.33
+Counter Attack Effectiveness: 0.5
+Aggression: 0.8
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 0.5
+Offense Ev: 0.0
+Defense Ev: -0.2
+No Priority Share: 0.22
+Action Distribution: 
+Attacks: 4 (0.44), Counter Attacks: 2 (0.22), Parries: 3 (0.33)
+Scored Distribution: 
+Attacks: 2 (0.5), Counter Attacks: 1 (0.25), Ripostes: 1 (0.25)
+Received Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 1 (0.2), Ripostes: 1 (0.2)
+
+McKinley vs Mion (23/11/25)---
+
+            Ap (A)
+            Cc
+            Ap
+            Abt (P)
+            A (A)
+
+Attack Effectiveness: 1.0
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 1.0
+Aggression: 4.0
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 1.0
+Defense Ev: 1.0
+No Priority Share: 0.2
+Action Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
+Received Distribution: N/A
+
+Mion vs Baumstein (09/11/25)---
+
+Cc
+        A (Cc)
+        Cc
+cR (P)
+Ar
+Cr
+        A (P)
+        Ap
+
+Attack Effectiveness: 0.33
+Defense Effectiveness: 0.5
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.67
+Aggression: 0.75
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: -0.33
+Defense Ev: 0.0
+No Priority Share: 0.57
+Action Distribution: 
+Attacks: 3 (0.43), Counter Attacks: 3 (0.43), Parries: 1 (0.14)
+Scored Distribution: 
+Attacks: 1 (0.33), Counter Attacks: 2 (0.67), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 3 (0.75), Counter Attacks: 1 (0.25), Ripostes: 0 (0.0)
+
+Mion vs Bruk (09/11/25)---
+
+        Ap
+        A (Cc)
+        A (P)
+        A (P)
+A (P)
+        Ap
+
+Attack Effectiveness: 0.33
+Defense Effectiveness: 0.0
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.0
+Aggression: 1.0
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: -0.33
+Defense Ev: -1.0
+No Priority Share: 0.17
+Action Distribution: 
+Attacks: 3 (0.5), Counter Attacks: 1 (0.17), Parries: 2 (0.33)
+Scored Distribution: 
+Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 5 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+
+Mion vs Burke (08/11/25)---
+
+        Ar
+        R (Ar)
+R (Ar)
+cR (Rr)
+A (Ap)
+        A (Ap)
+Ap (A)
+Ap (A)
+
+Attack Effectiveness: 0.6
+Defense Effectiveness: 0.67
+Riposte To Parry Ratio: 0.67
+Counter Attack Effectiveness: N/A
+Aggression: 1.67
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 0.0
+Offense Ev: 0.2
+Defense Ev: 0.33
+No Priority Share: 0.12
+Action Distribution: 
+Attacks: 5 (0.62), Counter Attacks: 0 (0.0), Parries: 3 (0.38)
+Scored Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 0 (0.0), Ripostes: 2 (0.4)
+Received Distribution: 
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
+
+Mion vs Chen, Andrew (08/11/25)---
+
+A (P)
+Crr
+Cc
+Ar
+        Ap (P)
+        cRrr
+        A (Cc)
+Cc
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 0.6
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.75
+Aggression: 0.8
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 0.67
+Offense Ev: 0.0
+Defense Ev: 0.2
+No Priority Share: 0.62
+Action Distribution: 
+Attacks: 4 (0.44), Counter Attacks: 4 (0.44), Parries: 1 (0.11)
+Scored Distribution: 
+Attacks: 2 (0.4), Counter Attacks: 3 (0.6), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
+
+Mion vs Chin (08/11/25)---
+
+Ar
+cR (Ar)
+Cc
+        Cc
+        R (P)
+Cc
+Ar
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: 0.5
+Counter Attack Effectiveness: 1.0
+Aggression: 1.33
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 0.67
+Offense Ev: 0.0
+Defense Ev: 1.0
+No Priority Share: 0.57
+Action Distribution: 
+Attacks: 4 (0.5), Counter Attacks: 2 (0.25), Parries: 2 (0.25)
+Scored Distribution: 
+Attacks: 2 (0.4), Counter Attacks: 2 (0.4), Ripostes: 1 (0.2)
+Received Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 1 (0.5), Ripostes: 1 (0.5)
+
+Mion vs Fukuda, Alessio (08/11/25)---
+
+A (Cc)
+A (Ap)
+        R (Ar)
+        A (P)
+Cc
+A (P)
+        A (A)
+Cc
+
+Attack Effectiveness: 0.6
+Defense Effectiveness: 0.67
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 1.0
+Aggression: 1.67
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: 0.5
+Offense Ev: 0.2
+Defense Ev: 0.33
+No Priority Share: 0.38
+Action Distribution: 
+Attacks: 5 (0.62), Counter Attacks: 2 (0.25), Parries: 1 (0.12)
+Scored Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
+
+Mion vs Fukuda, Renzo (22/11/25)---
+
+        Abt (P)
+A (Csh)
+        Act (Cc)
+Cc
+        A (Cc)
+        A (A)
+        R (Ar)
+
+Attack Effectiveness: 0.33
+Defense Effectiveness: 0.25
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.33
+Aggression: 0.75
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: 0.0
+Offense Ev: -0.33
+Defense Ev: -0.5
+No Priority Share: 0.57
+Action Distribution: 
+Attacks: 3 (0.43), Counter Attacks: 3 (0.43), Parries: 1 (0.14)
+Scored Distribution: 
+Attacks: 1 (0.5), Counter Attacks: 1 (0.5), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 0 (0.0), Ripostes: 1 (0.2)
+
+Mion vs Graham (08/11/25)---
+
+Ar
+        A (P)
+        R (P)
+R (A)
+        A (A)
+        Rrr
+Ap
+        Arr
+
+Attack Effectiveness: 0.4
+Defense Effectiveness: 0.33
+Riposte To Parry Ratio: 0.25
+Counter Attack Effectiveness: N/A
+Aggression: 1.67
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 0.33
+Offense Ev: -0.2
+Defense Ev: -0.33
+No Priority Share: 0.12
+Action Distribution: 
+Attacks: 5 (0.56), Counter Attacks: 0 (0.0), Parries: 4 (0.44)
+Scored Distribution: 
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
+Received Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 0 (0.0), Ripostes: 2 (0.4)
+
+Mion vs Hamilton (23/11/25)---
+
+        A (P)
+A (P)
+        R (Ar)
+nan
+Cc
+Cc
+        Cc
+nan
+Rr
+        Ar
+Abt
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 0.6
+Riposte To Parry Ratio: 0.33
+Counter Attack Effectiveness: 1.0
+Aggression: 0.8
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 0.5
+Offense Ev: 0.0
+Defense Ev: 0.2
+No Priority Share: 0.44
+Action Distribution: 
+Attacks: 4 (0.44), Counter Attacks: 2 (0.22), Parries: 3 (0.33)
+Scored Distribution: 
+Attacks: 2 (0.4), Counter Attacks: 2 (0.4), Ripostes: 1 (0.2)
+Received Distribution: 
+Attacks: 2 (0.5), Counter Attacks: 1 (0.25), Ripostes: 1 (0.25)
+
+Mion vs Kasi (22/11/25)---
+
+Ar
+A (Cc)
+        Abt (P)
+Cr
+        Csh
+        Cc
+        A (Cc)
+A (P)
+A (Csh)
+
+Attack Effectiveness: 0.67
+Defense Effectiveness: 0.33
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.5
+Aggression: 2.0
+Attack Success Rate Vs Counter Attack: 0.5
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 0.33
+Defense Ev: -0.33
+No Priority Share: 0.33
+Action Distribution: 
+Attacks: 6 (0.67), Counter Attacks: 2 (0.22), Parries: 1 (0.11)
+Scored Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 2 (0.5), Counter Attacks: 2 (0.5), Ripostes: 0 (0.0)
+
+Mion vs Knizhnik (23/11/25)---
+
+        R (P)
+A (P)
+R
+        R (P)
+A (Csh)
+        A (P)
+        Act (Cc)
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 0.33
+Riposte To Parry Ratio: 0.25
+Counter Attack Effectiveness: 0.0
+Aggression: 1.33
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: 0.33
+Offense Ev: 0.0
+Defense Ev: -0.33
+No Priority Share: 0.14
+Action Distribution: 
+Attacks: 4 (0.44), Counter Attacks: 1 (0.11), Parries: 4 (0.44)
+Scored Distribution: 
+Attacks: 2 (0.67), Counter Attacks: 0 (0.0), Ripostes: 1 (0.33)
+Received Distribution: 
+Attacks: 2 (0.5), Counter Attacks: 0 (0.0), Ripostes: 2 (0.5)
+
+Mion vs Kumbla (23/11/25)---
+
+        R
+
+Attack Effectiveness: 0.0
+Defense Effectiveness: N/A
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: N/A
+Aggression: N/A
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 0.0
+Offense Ev: -1.0
+Defense Ev: N/A
+No Priority Share: 0.0
+Action Distribution: 
+Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Parries: 0 (0.0)
+Scored Distribution: N/A
+Received Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 0 (0.0), Ripostes: 1 (1.0)
+
+Mion vs Lee, Aidan (09/11/25)---
+
+        Ar
+        Abt (P)
+Ar
+A (A)
+        Ar
+R (P)
+Rr
+        Ap (A)
+        Cc
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 0.4
+Riposte To Parry Ratio: 0.4
+Counter Attack Effectiveness: N/A
+Aggression: 0.8
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 0.0
+Defense Ev: -0.2
+No Priority Share: 0.22
+Action Distribution: 
+Attacks: 4 (0.44), Counter Attacks: 0 (0.0), Parries: 5 (0.56)
+Scored Distribution: 
+Attacks: 2 (0.5), Counter Attacks: 0 (0.0), Ripostes: 2 (0.5)
+Received Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
+
+Mion vs Lee, Jacob (09/11/25)---
+
+A (P)
+cRr
+A (A)
+Ar
+        Rr
+        A (D)
+Ar
+
+Attack Effectiveness: 0.8
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: 1.0
+Counter Attack Effectiveness: N/A
+Aggression: 5.0
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 0.75
+Offense Ev: 0.6
+Defense Ev: 1.0
+No Priority Share: 0.43
+Action Distribution: 
+Attacks: 5 (0.83), Counter Attacks: 0 (0.0), Parries: 1 (0.17)
+Scored Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 0 (0.0), Ripostes: 1 (0.2)
+Received Distribution: 
+Attacks: 1 (0.5), Counter Attacks: 0 (0.0), Ripostes: 1 (0.5)
+
+Mion vs Li, Brandon (09/11/25)---
+
+        A (Cc)
+A (P)
+Cc
+        cR (P)
+R (Ar)
+        A (P)
+        Arr
+A (Ap)
+yc
+rc
+
+Attack Effectiveness: 0.67
+Defense Effectiveness: 0.4
+Riposte To Parry Ratio: 0.25
+Counter Attack Effectiveness: 0.5
+Aggression: 0.6
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: 0.5
+Offense Ev: 0.33
+Defense Ev: -0.2
+No Priority Share: 0.3
+Action Distribution: 
+Attacks: 3 (0.33), Counter Attacks: 2 (0.22), Parries: 4 (0.44)
+Scored Distribution: 
+Attacks: 2 (0.33), Counter Attacks: 1 (0.17), Ripostes: 1 (0.17)
+Received Distribution: 
+Attacks: 3 (0.75), Counter Attacks: 0 (0.0), Ripostes: 1 (0.25)
+
+Mion vs McIsaac (08/11/25)---
+
+        Cc
+Cc
+Cc
+Cc
+Cc
+        Cc
+Aan (P)
+
+Attack Effectiveness: 0.33
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 1.0
+Aggression: 0.75
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: -0.33
+Defense Ev: 1.0
+No Priority Share: 0.57
+Action Distribution: 
+Attacks: 3 (0.43), Counter Attacks: 4 (0.57), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 1 (0.2), Counter Attacks: 4 (0.8), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 2 (1.0), Ripostes: 0 (0.0)
+
+Mion vs Morais (09/11/25)---
+
+        A (P)
+        A (Cc)
+Cc
+        Cc
+A (P)
+        A (Cc)
+        Cc
+
+Attack Effectiveness: 0.33
+Defense Effectiveness: 0.25
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.33
+Aggression: 0.75
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: -0.33
+Defense Ev: -0.5
+No Priority Share: 0.43
+Action Distribution: 
+Attacks: 3 (0.43), Counter Attacks: 3 (0.43), Parries: 1 (0.14)
+Scored Distribution: 
+Attacks: 1 (0.5), Counter Attacks: 1 (0.5), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
+
+Mion vs Oh, Sean (08/11/25)---
+
+Cc
+        Cc
+A (P)
+A (A)
+        A (P)
+        A (Cc)
+A (P)
+        Ar
+Af (Cd)
+
+Attack Effectiveness: 0.8
+Defense Effectiveness: 0.25
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.5
+Aggression: 1.25
+Attack Success Rate Vs Counter Attack: 0.5
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 0.6
+Defense Ev: -0.5
+No Priority Share: 0.22
+Action Distribution: 
+Attacks: 5 (0.56), Counter Attacks: 2 (0.22), Parries: 2 (0.22)
+Scored Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 3 (0.75), Counter Attacks: 1 (0.25), Ripostes: 0 (0.0)
+
+Mion vs Oronowicz (08/11/25)---
+
+A (P)
+A (P)
+        A (Csh)
+A (Cc)
+A (Cc)
+cR (Rr)
+
+Attack Effectiveness: 1.0
+Defense Effectiveness: 0.5
+Riposte To Parry Ratio: 1.0
+Counter Attack Effectiveness: 0.0
+Aggression: 2.0
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 1.0
+Defense Ev: 0.0
+No Priority Share: 0.17
+Action Distribution: 
+Attacks: 4 (0.67), Counter Attacks: 1 (0.17), Parries: 1 (0.17)
+Scored Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 0 (0.0), Ripostes: 1 (0.2)
+Received Distribution: 
+Attacks: 1 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+
+Mion vs Shih (22/11/25)---
+
+yc
+rc
+A (Csh)
+Cc
+        Cr
+        R (Ar)
+        A (Csh)
+Ar
+R
+
+Attack Effectiveness: 0.5
+Defense Effectiveness: 0.67
+Riposte To Parry Ratio: 1.0
+Counter Attack Effectiveness: 0.5
+Aggression: 1.33
+Attack Success Rate Vs Counter Attack: 0.5
+Attack Success Rate Vs Parry: 0.5
+Offense Ev: 0.0
+Defense Ev: 0.33
+No Priority Share: 0.56
+Action Distribution: 
+Attacks: 4 (0.57), Counter Attacks: 2 (0.29), Parries: 1 (0.14)
+Scored Distribution: 
+Attacks: 2 (0.33), Counter Attacks: 1 (0.17), Ripostes: 1 (0.17)
+Received Distribution: 
+Attacks: 1 (0.33), Counter Attacks: 1 (0.33), Ripostes: 1 (0.33)
+
+Mion vs Stanley (09/11/25)---
+
+        R (Ar)
+nan
+nan
+        R (P)
+nan
+        Cc (A)
+        Cc (A)
+        Cc (A)
+
+Attack Effectiveness: 0.0
+Defense Effectiveness: N/A
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: N/A
+Aggression: N/A
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 0.0
+Offense Ev: -1.0
+Defense Ev: N/A
+No Priority Share: 0.2
+Action Distribution: 
+Attacks: 5 (0.83), Counter Attacks: 0 (0.0), Parries: 1 (0.17)
+Scored Distribution: N/A
+Received Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 3 (0.6), Ripostes: 2 (0.4)
+
+Mion vs Sullivan (23/11/25)---
+
+Cc
+        Cc
+A (P)
+Ar
+        ccR (Rr)
+A (P)
+Ar
+
+Attack Effectiveness: 0.67
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 1.0
+Aggression: 6.0
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 0.8
+Offense Ev: 0.33
+Defense Ev: 1.0
+No Priority Share: 0.57
+Action Distribution: 
+Attacks: 6 (0.86), Counter Attacks: 1 (0.14), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 1 (0.5), Ripostes: 1 (0.5)
+
+Mion vs Tsimiklis (09/11/25)---
+
+        Ar
+        A (Csh)
+        Ap
+        A (Cc)
+        Ar
+
+Attack Effectiveness: 0.0
+Defense Effectiveness: 0.0
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.0
+Aggression: 0.25
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: N/A
+Offense Ev: -1.0
+Defense Ev: -1.0
+No Priority Share: 0.4
+Action Distribution: 
+Attacks: 1 (0.2), Counter Attacks: 2 (0.4), Parries: 2 (0.4)
+Scored Distribution: N/A
+Received Distribution: 
+Attacks: 5 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+
+Mion vs Um (09/11/25)---
+
+        Ar
+        Arrr
+        Cc
+nan
+A (Cc)
+        A (P)
+A (Cc)
+        A (Cc)
+
+Attack Effectiveness: 0.67
+Defense Effectiveness: 0.0
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 0.0
+Aggression: 0.75
+Attack Success Rate Vs Counter Attack: 0.67
+Attack Success Rate Vs Parry: N/A
+Offense Ev: 0.33
+Defense Ev: -1.0
+No Priority Share: 0.14
+Action Distribution: 
+Attacks: 3 (0.43), Counter Attacks: 1 (0.14), Parries: 3 (0.43)
+Scored Distribution: 
+Attacks: 2 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
+
+Mion vs Wu (08/11/25)---
+
+        A (P)
+Cc
+        R (P)
+        Cc
+        Cc
+        R (P)
+
+Attack Effectiveness: 0.0
+Defense Effectiveness: 0.5
+Riposte To Parry Ratio: 0.0
+Counter Attack Effectiveness: 1.0
+Aggression: 2.0
+Attack Success Rate Vs Counter Attack: 0.0
+Attack Success Rate Vs Parry: 0.0
+Offense Ev: -1.0
+Defense Ev: 0.0
+No Priority Share: 0.17
+Action Distribution: 
+Attacks: 4 (0.5), Counter Attacks: 1 (0.12), Parries: 3 (0.38)
+Scored Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 1 (1.0), Ripostes: 0 (0.0)
+Received Distribution: 
+Attacks: 1 (0.2), Counter Attacks: 2 (0.4), Ripostes: 2 (0.4)
+
+Mion vs Xiao, Enoch (23/11/25)---
+
+R
+Cc
+R
+
+Attack Effectiveness: N/A
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: 1.0
+Counter Attack Effectiveness: 1.0
+Aggression: 0.0
+Attack Success Rate Vs Counter Attack: N/A
+Attack Success Rate Vs Parry: N/A
+Offense Ev: N/A
+Defense Ev: 1.0
+No Priority Share: 0.33
+Action Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 1 (0.33), Parries: 2 (0.67)
+Scored Distribution: 
+Attacks: 0 (0.0), Counter Attacks: 1 (0.33), Ripostes: 2 (0.67)
+Received Distribution: N/A
+
+Mion vs Yerokhin (23/11/25)---
+
+A (Csh)
+A (Cc)
+A (P)
+Cc
+Cc
+
+Attack Effectiveness: 1.0
+Defense Effectiveness: 1.0
+Riposte To Parry Ratio: N/A
+Counter Attack Effectiveness: 1.0
+Aggression: 1.5
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 1.0
+Defense Ev: 1.0
+No Priority Share: 0.4
+Action Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Parries: 0 (0.0)
+Scored Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 2 (0.4), Ripostes: 0 (0.0)
+Received Distribution: N/A
+
+Mion vs Zhang (08/11/25)---
+
+Cc
+        A (P)
+A (Cc)
+Ar
+R (Ar)
+        Ar
+Ap
+
+Attack Effectiveness: 1.0
+Defense Effectiveness: 0.5
+Riposte To Parry Ratio: 0.33
+Counter Attack Effectiveness: 1.0
+Aggression: 0.75
+Attack Success Rate Vs Counter Attack: 1.0
+Attack Success Rate Vs Parry: 1.0
+Offense Ev: 1.0
+Defense Ev: 0.0
+No Priority Share: 0.29
+Action Distribution: 
+Attacks: 3 (0.43), Counter Attacks: 1 (0.14), Parries: 3 (0.43)
+Scored Distribution: 
+Attacks: 3 (0.6), Counter Attacks: 1 (0.2), Ripostes: 1 (0.2)
+Received Distribution: 
+Attacks: 2 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+
