@@ -59,6 +59,7 @@ class CsvFencerActionProvider(FencerActionProvider):
         Returns:
             The number of times the fencer scored with the specified action.
         """
+        # print("getting scored")
         return count(self._points_scored_mask() & self._filter_actions(action_filter))
 
     def received(self, action_filter: Callable[[actions.Action], bool]) -> int:
@@ -71,12 +72,22 @@ class CsvFencerActionProvider(FencerActionProvider):
         Returns:
             The number of times the fencer received a touch with the specified action.
         """
+        # print("getting received")
         return count(self._points_received_mask() & self._filter_actions(action_filter))
 
     def _filter_actions(
         self, action_filter: Callable[[actions.Action], bool]
     ) -> pd.Series:
-        return self._df.apply(lambda row: action_filter(build_action(row)), axis=1)  # pyright: ignore[reportReturnType]
+        return self._df.apply(
+            lambda row: self._handle_action_row(row, action_filter), axis=1
+        )  # pyright: ignore[reportReturnType]
+
+    def _handle_action_row(self, row, action_filter):
+        action = build_action(row)
+        result = action_filter(action)
+        # if result:
+        #     print(action)
+        return result
 
     def _points_scored_mask(self) -> pd.Series:
         left_scored = self._filter_left_actions() & self._filter_left_fencer()

@@ -1,6 +1,6 @@
 from typing import Callable
 
-from actions import ActionType, Priority, TacticalIntent
+from actions import ActionType, DefensiveAlternative, Priority, TacticalIntent
 from fencer_action_provider import FencerActionProvider
 
 
@@ -24,6 +24,7 @@ def format_distribution(
     provider: FencerActionProvider,
 ) -> str:
     """Format a distribution metric with counts and percentages."""
+    # print(f"calculating distribution {name}")
     dist = dist_fn(provider)
     total = sum(dist.values())
 
@@ -40,103 +41,137 @@ def proportion(a: int, b: int) -> float:
     return a / (a + b)
 
 
+def ratio(a: int, b: int) -> float:
+    return a / b
+
+
 # Define all numerical metrics
 
 METRICS: dict[str, Callable[[FencerActionProvider], float]] = {
     "Offense Effectiveness": lambda p: proportion(
-        p.scored(
-            lambda a: a.classify_scoring(tactical_intent=TacticalIntent.OFFENSIVE)
-        ),
-        p.received(
-            lambda a: a.classify_receiving(tactical_intent=TacticalIntent.OFFENSIVE)
-        ),
+        p.scored(lambda a: a.scoring_tactical_intent_is(TacticalIntent.OFFENSIVE)),
+        p.received(lambda a: a.receiving_tactical_intent_is(TacticalIntent.OFFENSIVE)),
     ),
     "Defense Effectiveness": lambda p: proportion(
-        p.scored(
-            lambda a: a.classify_scoring(tactical_intent=TacticalIntent.DEFENSIVE)
-        ),
-        p.received(
-            lambda a: a.classify_receiving(tactical_intent=TacticalIntent.DEFENSIVE)
-        ),
+        p.scored(lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)),
+        p.received(lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)),
     ),
     # percentage of counter attacks that are successful
     "Counter Attack Effectiveness": lambda p: proportion(
-        p.scored(lambda a: a.classify_scoring(action_type=ActionType.COUNTER_ATTACK)),
-        p.received(
-            lambda a: a.classify_receiving(action_type=ActionType.COUNTER_ATTACK)
-        ),
+        p.scored(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
+        p.received(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
     ),
     "Offensive Volume": lambda p: proportion(
-        p.scored(lambda a: a.classify_scoring(tactical_intent=TacticalIntent.OFFENSIVE))
+        p.scored(lambda a: a.scoring_tactical_intent_is(TacticalIntent.OFFENSIVE))
         + p.received(
-            lambda a: a.classify_receiving(tactical_intent=TacticalIntent.OFFENSIVE)
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.OFFENSIVE)
         ),
-        p.scored(lambda a: a.classify_scoring(tactical_intent=TacticalIntent.DEFENSIVE))
+        p.scored(lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE))
         + p.received(
-            lambda a: a.classify_receiving(tactical_intent=TacticalIntent.DEFENSIVE)
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
         ),
     ),
     "No Priority Share": lambda p: proportion(
-        p.scored(lambda a: a.classify_scoring(priority=Priority.WITHOUT_PRIORITY))
-        + p.received(
-            lambda a: a.classify_receiving(priority=Priority.WITHOUT_PRIORITY)
-        ),
-        p.scored(lambda a: a.classify_scoring(priority=Priority.WITH_PRIORITY))
-        + p.received(lambda a: a.classify_receiving(priority=Priority.WITH_PRIORITY)),
+        p.scored(lambda a: a.scoring_priority_is(Priority.WITHOUT_PRIORITY))
+        + p.received(lambda a: a.receiving_priority_is(Priority.WITHOUT_PRIORITY)),
+        p.scored(lambda a: a.scoring_priority_is(Priority.WITH_PRIORITY))
+        + p.received(lambda a: a.receiving_priority_is(Priority.WITH_PRIORITY)),
     ),
     "Attack Success Rate vs Counter Attack": lambda p: proportion(
-        p.scored(lambda a: a.classify_receiving(action_type=ActionType.COUNTER_ATTACK)),
-        p.received(lambda a: a.classify_scoring(action_type=ActionType.COUNTER_ATTACK)),
+        p.scored(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
+        p.received(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
     ),
     "Attack Success Rate vs Parry": lambda p: proportion(
-        p.scored(lambda a: a.classify_receiving(action_type=ActionType.PARRY)),
-        p.received(lambda a: a.classify_scoring(action_type=ActionType.PARRY)),
+        p.scored(lambda a: a.receiving_action_type_is(ActionType.PARRY)),
+        p.received(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
     ),
     "Counter Attack Success Rate": lambda p: proportion(
-        p.scored(lambda a: a.classify_scoring(action_type=ActionType.COUNTER_ATTACK)),
-        p.received(
-            lambda a: a.classify_receiving(action_type=ActionType.COUNTER_ATTACK)
-        ),
+        p.scored(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
+        p.received(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
     ),
     "Riposte Success Rate": lambda p: proportion(
-        p.scored(lambda a: a.classify_scoring(action_type=ActionType.PARRY)),
-        p.received(lambda a: a.classify_receiving(action_type=ActionType.PARRY)),
+        p.scored(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
+        p.received(lambda a: a.receiving_action_type_is(ActionType.PARRY)),
+    ),
+    "Attack Strength": lambda p: ratio(
+        p.scored(lambda a: a.scoring_action_type_is(ActionType.ATTACK)),
+        p.received(lambda a: a.scoring_action_type_is(ActionType.ATTACK)),
+    ),
+    "Parry Strength": lambda p: ratio(
+        p.scored(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
+        p.received(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
+    ),
+    "Counter Attack Strength": lambda p: ratio(
+        p.scored(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
+        p.received(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
     ),
 }
 
-DISTRIBUTIONS = {
+DISTRIBUTIONS: dict[str, Callable[[FencerActionProvider], dict[str, int]]] = {
     "Action Distribution": lambda p: {
-        "Attacks": p.scored(lambda a: a.classify_scoring(action_type=ActionType.ATTACK))
-        + p.received(lambda a: a.classify_receiving(action_type=ActionType.ATTACK)),
+        "Attacks": p.scored(lambda a: a.scoring_action_type_is(ActionType.ATTACK))
+        + p.received(lambda a: a.receiving_action_type_is(ActionType.ATTACK)),
         "Counter Attacks": p.scored(
-            lambda a: a.classify_scoring(action_type=ActionType.COUNTER_ATTACK)
+            lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)
         )
-        + p.received(
-            lambda a: a.classify_receiving(action_type=ActionType.COUNTER_ATTACK)
-        ),
-        "Ripostes": p.scored(lambda a: a.classify_scoring(action_type=ActionType.PARRY))
-        + p.received(lambda a: a.classify_receiving(action_type=ActionType.PARRY)),
+        + p.received(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
+        "Ripostes": p.scored(lambda a: a.scoring_action_type_is(ActionType.PARRY))
+        + p.received(lambda a: a.receiving_action_type_is(ActionType.PARRY)),
     },
     "Received Distribution": lambda p: {
-        "Attacks": p.received(
-            lambda a: a.classify_receiving(action_type=ActionType.ATTACK)
-        ),
+        "Attacks": p.received(lambda a: a.scoring_action_type_is(ActionType.ATTACK)),
         "Counter Attacks": p.received(
-            lambda a: a.classify_receiving(action_type=ActionType.COUNTER_ATTACK)
+            lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)
         ),
-        "Ripostes": p.received(
-            lambda a: a.classify_receiving(action_type=ActionType.PARRY)
-        ),
+        "Ripostes": p.received(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
     },
     "Scored Distribution": lambda p: {
-        "Attacks": p.scored(
-            lambda a: a.classify_scoring(action_type=ActionType.ATTACK)
-        ),
+        "Attacks": p.scored(lambda a: a.scoring_action_type_is(ActionType.ATTACK)),
         "Counter Attacks": p.scored(
-            lambda a: a.classify_scoring(action_type=ActionType.COUNTER_ATTACK)
+            lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)
         ),
-        "Ripostes": p.scored(
-            lambda a: a.classify_scoring(action_type=ActionType.PARRY)
+        "Ripostes": p.scored(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
+    },
+    "Defense Distribution": lambda p: {
+        "Parry": p.scored(
+            lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.scoring_defensive_alternative_is(DefensiveAlternative.PARRY)
+        )
+        + p.received(
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.receiving_defensive_alternative_is(DefensiveAlternative.PARRY)
+        ),
+        "Counter Attack": p.scored(
+            lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.scoring_defensive_alternative_is(DefensiveAlternative.COUNTER_ATTACK)
+        )
+        + p.received(
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.receiving_defensive_alternative_is(
+                DefensiveAlternative.COUNTER_ATTACK
+            )
+        ),
+        "Attack on Prep": p.scored(
+            lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.scoring_defensive_alternative_is(DefensiveAlternative.ATTACK_ON_PREP)
+        )
+        + p.received(
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.receiving_defensive_alternative_is(
+                DefensiveAlternative.ATTACK_ON_PREP
+            )
+        ),
+        "Defense with Distance": p.scored(
+            lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.scoring_defensive_alternative_is(
+                DefensiveAlternative.DEFENSE_WITH_DISTANCE
+            )
+        )
+        + p.received(
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.receiving_defensive_alternative_is(
+                DefensiveAlternative.DEFENSE_WITH_DISTANCE
+            )
         ),
     },
     # "Parry Outcomes": lambda p: {

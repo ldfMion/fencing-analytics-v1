@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from enum import Enum, auto
+from enum import Enum
 
 
 class TacticalIntent(Enum):
@@ -242,129 +242,105 @@ class Action:
         assert str(response) != "nan"
         self.response = response
 
-    def classify_scoring(
-        self,
-        tactical_intent: TacticalIntent | None = None,
-        action_type: ActionType | None = None,
-        priority: Priority | None = None,
-        defensive_alternative: DefensiveAlternative | None = None,
+    # --- scoring perspective ---
+
+    def scoring_tactical_intent_is(self, tactical_intent: TacticalIntent):
+        found_action = self._find_action()
+        return (
+            all_actions[found_action]["classifications"]["tactical_intent"]
+            == tactical_intent
+        )
+
+    def scoring_action_type_is(self, action_type: ActionType):
+        found_action = self._find_action()
+        return (
+            all_actions[found_action]["classifications"]["action_type"] == action_type
+        )
+
+    def scoring_priority_is(self, priority: Priority):
+        found_action = self._find_action()
+        return all_actions[found_action]["classifications"]["priority"] == priority
+
+    def scoring_defensive_alternative_is(
+        self, defensive_alternative: DefensiveAlternative
     ):
         found_action = self._find_action()
+        return (
+            all_actions[found_action]["classifications"]["defensive_alternative"]
+            == defensive_alternative
+        )
 
-        if (
-            tactical_intent is not None
-            and tactical_intent
-            != all_actions[found_action]["classifications"]["tactical_intent"]
-        ):
-            return False
+    # --- receiving perspective ---
 
-        if (
-            action_type is not None
-            and action_type
-            != all_actions[found_action]["classifications"]["action_type"]
-        ):
-            return False
-
-        if (
-            priority is not None
-            and priority != all_actions[found_action]["classifications"]["priority"]
-        ):
-            return False
-
-        if (
-            defensive_alternative is not None
-            and defensive_alternative
-            != all_actions[found_action]["classifications"]["defensive_alternative"]
-        ):
-            return False
-
-        # print(self)
-        return True
-
-    def classify_receiving(
-        self,
-        tactical_intent: TacticalIntent | None = None,
-        action_type: ActionType | None = None,
-        priority: Priority | None = None,
-        defensive_alternative: DefensiveAlternative | None = None,
-    ):
-        found_action = self._find_action()
+    def receiving_tactical_intent_is(self, tactical_intent: TacticalIntent):
         found_response = self._find_response()
+        if (
+            found_response is None
+            or "tactical_intent" not in all_responses[found_response]["classifications"]
+        ):
+            found_action = self._find_action()
+            # if the response is empty, then the tactical intent classification from the receiving perspective
+            # is the opposite of the one from the scoring perspective
+            action_tactical_intent = all_actions[found_action]["classifications"][
+                "tactical_intent"
+            ]
+            return action_tactical_intent != tactical_intent
+        else:
+            response_tactical_intent = all_responses[found_response]["classifications"][
+                "tactical_intent"
+            ]
+            return response_tactical_intent == tactical_intent
 
-        if tactical_intent is not None:
-            if (
-                found_response is None
-                or "tactical_intent"
-                not in all_responses[found_response]["classifications"]
-            ):
-                # if the response is empty, then the tactical intent classification from the receiving perspective
-                # is the opposite of the one from the scoring perspective
-                if (
-                    all_actions[found_action]["classifications"]["tactical_intent"]
-                    == tactical_intent
-                ):
-                    return False
-            else:
-                if (
-                    all_responses[found_response]["classifications"]["tactical_intent"]
-                    != tactical_intent
-                ):
-                    return False
-
-            return True
-
-        if action_type is not None:
-            if found_response is None:
-                action_action_type_class = all_actions[found_action]["classifications"][
-                    "action_type"
-                ]
-                if action_action_type_class == ActionType.ATTACK:
-                    if found_action == "Ar":
-                        # if the action is an attack renewal, then the response is a parry
-                        # so we exclude it if we aren't looking for parries
-                        if action_type != ActionType.PARRY:
-                            return False
-                    elif found_action == "Ap":
-                        # if the action is an attack on prep with an empty response we'll assume the opponent was attacking
-                        # so we exclude it if we aren't looking for attacks
-                        if action_type != ActionType.ATTACK:
-                            return False
-                    else:
-                        raise ValueError(
-                            f"To have an action_type from the receiving perspective for a scoring attack (not Ar), the response must be present. Action: '{self}'"
-                        )
-                else:
-                    # then the action is a counter attack or parry, so the ActionType of the response is attack
-                    # so we need to exclude it if we aren't looking for an attack
-                    if action_type != ActionType.ATTACK:
-                        return False
-            else:
-                if (
-                    action_type
-                    != all_responses[found_response]["classifications"]["action_type"]
-                ):
-                    return False
-
-        if priority is not None:
-            # filtered priority has to be the opposite from the action priority
-            if priority == all_actions[found_action]["classifications"]["priority"]:
-                return False
-
-        if defensive_alternative is not None:
-            if found_response is None:
+    def receiving_action_type_is(self, action_type: ActionType):
+        found_response = self._find_response()
+        if found_response is None:
+            found_action = self._find_action()
+            # action special cases
+            if found_action == "Ar":
+                # if the action is an attack renewal, then the response is a parry
+                # so we exclude it if we aren't looking for parries
+                return action_type == ActionType.PARRY
+            if found_action == "Ap":
+                # if the action is an attack on prep with an empty response we'll assume the opponent was attacking
+                # so we exclude it if we aren't looking for attacks
+                return action_type == ActionType.ATTACK
+            action_action_type = all_actions[found_action]["classifications"][
+                "action_type"
+            ]
+            if action_action_type == ActionType.ATTACK:
                 raise ValueError(
-                    f"Filtering for defensive alternative in a receiving action that doesn't have a defined response. Action: {self}"
+                    f"To have an action_type from the receiving perspective for a scoring attack (not Ar), the response must be present. Action: '{self}'"
                 )
-            if (
-                defensive_alternative
-                != all_responses[found_response]["classifications"][
-                    "defensive_alternative"
-                ]
-            ):
-                return False
+            else:
+                # then the action is a counter attack or parry, so the ActionType of the response is attack
+                # so we need to exclude it if we aren't looking for an attack
+                return action_type == ActionType.ATTACK
+        else:
+            response_action_type = all_responses[found_response]["classifications"][
+                "action_type"
+            ]
+            return action_type == response_action_type
 
-        # print(self)
-        return True
+    def receiving_priority_is(self, priority: Priority):
+        return not self.scoring_priority_is(priority)
+
+    def receiving_defensive_alternative_is(
+        self, defensive_alternative: DefensiveAlternative
+    ):
+        found_response = self._find_response()
+        if found_response is None:
+            found_action = self._find_action()
+            if found_action == "Ar":
+                return defensive_alternative == DefensiveAlternative.PARRY
+            if found_action == "Ap":
+                return defensive_alternative == DefensiveAlternative.ATTACK_ON_PREP
+            raise ValueError(
+                f"Filtering for defensive alternative in a receiving action that doesn't have a defined response. Action: {self}"
+            )
+        response_defensive_alternative = all_responses[found_response][
+            "classifications"
+        ]["defensive_alternative"]
+        return response_defensive_alternative == defensive_alternative
 
     def _find_action(self):
         # find the first action in the dict that has self.action as a substring
