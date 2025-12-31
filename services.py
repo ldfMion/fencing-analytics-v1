@@ -35,9 +35,9 @@ def analyze_fencer(main_df: pd.DataFrame, fencer_name: str):
             print(metric)
         print()
 
-    bout_data_list = load_bouts_from_df(main_df)
-    bouts = get_bouts(bout_data_list)
-    analyze_bouts(bouts, fencer_name)
+    # bout_data_list = load_bouts_from_df(main_df)
+    # bouts = get_bouts(bout_data_list)
+    # analyze_bouts(bouts, fencer_name)
 
 
 def analyze_bouts(bouts: List[Bout], fencer_name: str):

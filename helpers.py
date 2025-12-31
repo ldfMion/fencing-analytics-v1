@@ -29,5 +29,5 @@ def build_action(row: pd.Series) -> actions.Action:
     response = row["Response"]
     return actions.Action(
         str(row["Action"]),
-        None if response is None or response is pd.NA else str(response),
+        None if response is None or pd.isna(response) else str(response),  # pyright: ignore[reportGeneralTypeIssues]
     )

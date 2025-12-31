@@ -1,0 +1,114 @@
+------- Analysis: overall --------
+Offense Effectiveness: 0.55
+Defense Effectiveness: 0.56
+Counter Attack Effectiveness: 0.69
+Offensive Volume: 0.49
+No Priority Share: 0.51
+Attack Success Rate vs Counter Attack: 0.46
+Attack Success Rate vs Parry: 0.65
+Counter Attack Success Rate: 0.69
+Riposte Success Rate: 0.28
+Action Distribution:
+Attacks: 115 (0.49), Counter Attacks: 58 (0.25), Ripostes: 60 (0.26)
+Received Distribution:
+Attacks: 43 (0.41), Counter Attacks: 18 (0.17), Ripostes: 43 (0.41)
+Scored Distribution:
+Attacks: 72 (0.56), Counter Attacks: 40 (0.31), Ripostes: 17 (0.13)
+Parry Outcomes:
+Riposte Hits: 17 (0.25), Attack or Renewal Hits: 43 (0.62), Opp Counter Riposte Hits: 9 (0.13)
+
+------- Analysis: Elites - Day 1 --------
+Offense Effectiveness: 0.51
+Defense Effectiveness: 0.68
+Counter Attack Effectiveness: 0.82
+Offensive Volume: 0.5
+No Priority Share: 0.53
+Attack Success Rate vs Counter Attack: 0.45
+Attack Success Rate vs Parry: 0.64
+Counter Attack Success Rate: 0.82
+Riposte Success Rate: 0.3
+Action Distribution:
+Attacks: 37 (0.5), Counter Attacks: 17 (0.23), Ripostes: 20 (0.27)
+Received Distribution:
+Attacks: 13 (0.43), Counter Attacks: 3 (0.1), Ripostes: 14 (0.47)
+Scored Distribution:
+Attacks: 24 (0.55), Counter Attacks: 14 (0.32), Ripostes: 6 (0.14)
+Parry Outcomes:
+Riposte Hits: 6 (0.26), Attack or Renewal Hits: 13 (0.57), Opp Counter Riposte Hits: 4 (0.17)
+
+------- Analysis: Elites - Day 2 --------
+Offense Effectiveness: 0.43
+Defense Effectiveness: 0.26
+Counter Attack Effectiveness: 0.33
+Offensive Volume: 0.49
+No Priority Share: 0.54
+Attack Success Rate vs Counter Attack: 0.2
+Attack Success Rate vs Parry: 0.69
+Counter Attack Success Rate: 0.33
+Riposte Success Rate: 0.2
+Action Distribution:
+Attacks: 29 (0.48), Counter Attacks: 12 (0.2), Ripostes: 20 (0.33)
+Received Distribution:
+Attacks: 16 (0.4), Counter Attacks: 8 (0.2), Ripostes: 16 (0.4)
+Scored Distribution:
+Attacks: 13 (0.62), Counter Attacks: 4 (0.19), Ripostes: 4 (0.19)
+Parry Outcomes:
+Riposte Hits: 4 (0.18), Attack or Renewal Hits: 16 (0.73), Opp Counter Riposte Hits: 2 (0.09)
+
+------- Analysis: Western - Day 1 --------
+Offense Effectiveness: 0.64
+Defense Effectiveness: 0.54
+Counter Attack Effectiveness: 0.67
+Offensive Volume: 0.5
+No Priority Share: 0.48
+Attack Success Rate vs Counter Attack: 0.6
+Attack Success Rate vs Parry: 0.62
+Counter Attack Success Rate: 0.67
+Riposte Success Rate: 0.3
+Action Distribution:
+Attacks: 28 (0.5), Counter Attacks: 18 (0.32), Ripostes: 10 (0.18)
+Received Distribution:
+Attacks: 10 (0.43), Counter Attacks: 6 (0.26), Ripostes: 7 (0.3)
+Scored Distribution:
+Attacks: 18 (0.55), Counter Attacks: 12 (0.36), Ripostes: 3 (0.09)
+Parry Outcomes:
+Riposte Hits: 3 (0.23), Attack or Renewal Hits: 10 (0.77), Opp Counter Riposte Hits: 0 (0.0)
+
+------- Analysis: Western - Day 2 --------
+Offense Effectiveness: 0.65
+Defense Effectiveness: 0.82
+Counter Attack Effectiveness: 0.91
+Offensive Volume: 0.48
+No Priority Share: 0.48
+Attack Success Rate vs Counter Attack: 0.6
+Attack Success Rate vs Parry: 0.64
+Counter Attack Success Rate: 0.91
+Riposte Success Rate: 0.4
+Action Distribution:
+Attacks: 21 (0.5), Counter Attacks: 11 (0.26), Ripostes: 10 (0.24)
+Received Distribution:
+Attacks: 4 (0.36), Counter Attacks: 1 (0.09), Ripostes: 6 (0.55)
+Scored Distribution:
+Attacks: 17 (0.55), Counter Attacks: 10 (0.32), Ripostes: 4 (0.13)
+Parry Outcomes:
+Riposte Hits: 4 (0.36), Attack or Renewal Hits: 4 (0.36), Opp Counter Riposte Hits: 3 (0.27)
+
+------- Analysis: 4-4 --------
+Offense Effectiveness: 0.75
+Defense Effectiveness: 0.0
+Counter Attack Effectiveness: 0.0
+Offensive Volume: 0.8
+No Priority Share: 0.2
+Attack Success Rate vs Counter Attack: 0.67
+Attack Success Rate vs Parry: 1.0
+Counter Attack Success Rate: 0.0
+Riposte Success Rate: N/A
+Action Distribution:
+Attacks: 4 (0.8), Counter Attacks: 1 (0.2), Ripostes: 0 (0.0)
+Received Distribution:
+Attacks: 1 (0.5), Counter Attacks: 1 (0.5), Ripostes: 0 (0.0)
+Scored Distribution:
+Attacks: 3 (1.0), Counter Attacks: 0 (0.0), Ripostes: 0 (0.0)
+Parry Outcomes:
+Riposte Hits: 0 (0.0), Attack or Renewal Hits: 1 (1.0), Opp Counter Riposte Hits: 0 (0.0)
+

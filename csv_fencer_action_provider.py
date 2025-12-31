@@ -73,8 +73,10 @@ class CsvFencerActionProvider(FencerActionProvider):
         """
         return count(self._points_received_mask() & self._filter_actions(action_filter))
 
-    def _filter_actions(self, action_filter: Callable[[actions.Action], bool]) -> pd.Series:
-        return self._df.apply(lambda row: action_filter(build_action(row)), axis=1)
+    def _filter_actions(
+        self, action_filter: Callable[[actions.Action], bool]
+    ) -> pd.Series:
+        return self._df.apply(lambda row: action_filter(build_action(row)), axis=1)  # pyright: ignore[reportReturnType]
 
     def _points_scored_mask(self) -> pd.Series:
         left_scored = self._filter_left_actions() & self._filter_left_fencer()
