@@ -45,7 +45,22 @@ def ratio(a: int, b: int) -> float:
     return a / b
 
 
-# Define all numerical metrics
+# def numerical_metric(name: str, formula: Callable[[FencerActionProvider], float]):
+#     return lambda p: format_metric(name, formula, p)
+
+
+# def distribution_metric(
+#     name: str, dist_fn: Callable[[FencerActionProvider], dict[str, int]]
+# ):
+#     return lambda p: format_distribution(name, dist_fn, p)
+
+
+# # Define all numerical metrics
+
+# METRICS: dict[str, list[Callable[[FencerActionProvider], str]]] = {
+#     "Behavior Metrics": [],
+#     "Performance Metrics": [],
+# }
 
 METRICS: dict[str, Callable[[FencerActionProvider], float]] = {
     "Offense Effectiveness": lambda p: proportion(
