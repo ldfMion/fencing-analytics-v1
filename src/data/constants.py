@@ -1,0 +1,10 @@
+# columns.py
+LEFT_FENCER = "left_fencer"
+RIGHT_FENCER = "right_fencer"
+DATE = "date"
+ACTION = "action"
+RESPONSE = "response"
+SIDE = "side"
+LEFT_SCORE = "left_score"
+RIGHT_SCORE = "right_score"
+BOUT_TYPE = "bout_type"

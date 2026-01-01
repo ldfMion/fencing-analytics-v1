@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from enum import Enum, auto
-from typing import List, Optional
+from typing import List
 
-from actions import Action
+from src.domain.actions import Action
 
 
 @dataclass
@@ -32,3 +32,9 @@ class BoutData:
 class ActionOutcome(Enum):
     FOR = auto()
     AGAINST = auto()
+
+
+@dataclass
+class DataSources:
+    touches_file: str
+    bouts_file: str

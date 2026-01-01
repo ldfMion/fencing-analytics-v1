@@ -1,6 +1,6 @@
-from typing import Tuple, List
+from typing import List, Tuple
 
-from models import BoutData
+from src.domain.models import BoutData
 
 
 class Bout:
@@ -63,3 +63,16 @@ class Bout:
         """
         last_touch = self._bout_data.touches[-1]
         return (last_touch.left_score, last_touch.right_score)
+
+
+def get_bouts(bout_data_list: List[BoutData]) -> List[Bout]:
+    """
+    Creates a list of Bout objects from a list of BoutData objects.
+
+    Args:
+        bout_data_list: A list of BoutData objects.
+
+    Returns:
+        A list of Bout objects.
+    """
+    return [Bout(bout_data) for bout_data in bout_data_list]

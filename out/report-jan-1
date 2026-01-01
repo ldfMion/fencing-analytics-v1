@@ -1,0 +1,22 @@
+------- Analysis --------
+Offense Effectiveness: 0.35
+Defense Effectiveness: 0.63
+Counter Attack Effectiveness: 0.71
+Offensive Volume: 0.35
+No Priority Share: 0.73
+Attack Success Rate vs Counter Attack: 0.25
+Attack Success Rate vs Parry: 0.56
+Counter Attack Success Rate: 0.71
+Riposte Success Rate: 0.32
+Attack Strength: 0.5
+Parry Strength: 0.86
+Counter Attack Strength: 3.33
+Action Distribution:
+Attacks: 19 (0.29), Counter Attacks: 28 (0.42), Ripostes: 19 (0.29)
+Received Distribution:
+Attacks: 18 (0.58), Counter Attacks: 6 (0.19), Ripostes: 7 (0.23)
+Scored Distribution:
+Attacks: 9 (0.26), Counter Attacks: 20 (0.57), Ripostes: 6 (0.17)
+Defense Distribution:
+Parry: 14 (0.37), Counter Attack: 22 (0.58), Attack on Prep: 1 (0.03), Defense with Distance: 0 (0.0), Point in Line: 1 (0.03)
+

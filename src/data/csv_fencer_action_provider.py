@@ -2,21 +2,21 @@ from typing import Callable, List, Literal, Tuple, cast
 
 import pandas as pd
 
-import actions
-from constants import (
+import src.domain.actions as actions
+from src.data.constants import (
     ACTION,
+    BOUT_TYPE,
     DATE,
     LEFT_FENCER,
     RESPONSE,
     RIGHT_FENCER,
     SIDE,
 )
-from fencer_action_provider import (
-    ActionOutcome,
+from src.data.fencer_action_provider import (
     FencerActionProvider,
     OrderedFencerActionProvider,
 )
-from helpers import build_action, count
+from src.domain.models import ActionOutcome
 
 YELLOW_CARD = "yc"
 RED_CARD = "rc"
@@ -27,7 +27,13 @@ class CsvFencerActionProvider(FencerActionProvider):
     Provides fencing actions from a CSV file.
     """
 
-    def __init__(self, fencer_name: str, df: pd.DataFrame):
+    def __init__(
+        self,
+        fencer_name: str,
+        data: Tuple[pd.DataFrame, pd.DataFrame],
+        date: str | None = None,
+        bout_type: str | None = None,
+    ):
         """
         Initializes the CsvFencerActionProvider.
 
@@ -36,18 +42,20 @@ class CsvFencerActionProvider(FencerActionProvider):
             df: The DataFrame containing the fencing data.
         """
         self._fencer_name = fencer_name
-        required_columns = {SIDE, ACTION, RESPONSE, LEFT_FENCER, RIGHT_FENCER}
-        missing = required_columns - set(df.columns)
-        if missing:
-            raise ValueError(f"Missing required columns: {missing}")
+        (touches_df, bouts_df) = data
+        self._df = pd.merge(touches_df, bouts_df, how="left", on="bout_id")
         self._df = cast(
             pd.DataFrame,
-            df[
-                df[ACTION].notna()
-                & (df[ACTION] != YELLOW_CARD)
-                & (df[ACTION] != RED_CARD)
+            self._df[
+                self._df[ACTION].notna()
+                & (self._df[ACTION] != YELLOW_CARD)
+                & (self._df[ACTION] != RED_CARD)
             ],
         )
+        if date is not None:
+            self._df = self._df[self._df[DATE] == date]
+        if bout_type is not None:
+            self._df = self._df[self._df[BOUT_TYPE] == bout_type]
 
     def scored(self, action_filter: Callable[[actions.Action], bool]) -> int:
         """
@@ -163,3 +171,33 @@ class CsvOrderedFencerActionProvider(
 
                 action_pairs.append(((action1, outcome1), (action2, outcome2)))
         return action_pairs
+
+
+def count(mask: pd.Series) -> int:
+    """
+    Counts the number of True values in a boolean Series.
+
+    Args:
+        mask: A pandas Series of boolean values.
+
+    Returns:
+        The number of True values in the Series.
+    """
+    return int(mask.sum())
+
+
+def build_action(row: pd.Series) -> actions.Action:
+    """
+    Builds an Action object from a DataFrame row.
+
+    Args:
+        row: A row from the fensing data DataFrame.
+
+    Returns:
+        An Action object.
+    """
+    response = row[RESPONSE]
+    return actions.Action(
+        str(row[ACTION]),
+        None if response is None or pd.isna(response) else str(response),  # pyright: ignore[reportGeneralTypeIssues]
+    )

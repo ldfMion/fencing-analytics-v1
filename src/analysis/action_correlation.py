@@ -1,7 +1,7 @@
 import pandas as pd
 
-from bout_provider import get_bouts
-from data_loader import load_bouts_from_df
+from src.data.data_loader import load_bouts_from_df
+from src.domain.bout import get_bouts
 
 
 def run_no_priority_correlation(df: pd.DataFrame, fencer: str):

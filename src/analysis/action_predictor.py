@@ -1,7 +1,8 @@
 from enum import Enum, auto
 
-from actions import Action
-from fencer_action_provider import ActionOutcome, OrderedFencerActionProvider
+from src.data.fencer_action_provider import OrderedFencerActionProvider
+from src.domain.actions import Action
+from src.domain.models import ActionOutcome
 
 
 class ActionType(Enum):

@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Callable, List, Tuple
 
-from actions import Action
-from models import ActionOutcome, BoutData
+from src.domain.actions import Action
+from src.domain.models import ActionOutcome, BoutData
 
 
 class FencerActionProvider(ABC):

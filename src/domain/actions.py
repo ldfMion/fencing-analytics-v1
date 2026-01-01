@@ -23,6 +23,7 @@ class DefensiveAlternative(Enum):
     COUNTER_ATTACK = "counter_attack"
     ATTACK_ON_PREP = "attack_on_prep"
     DEFENSE_WITH_DISTANCE = "defense_with_distance"
+    LINE = "line"
 
 
 all_actions = {
@@ -118,6 +119,15 @@ all_actions = {
             "defensive_alternative": DefensiveAlternative.COUNTER_ATTACK,
         },
     },
+    "Cl": {
+        "name": "Point in Line",
+        "classifications": {
+            "tactical_intent": TacticalIntent.DEFENSIVE,
+            "action_type": ActionType.COUNTER_ATTACK,
+            "priority": Priority.WITH_PRIORITY,
+            "defensive_alternative": DefensiveAlternative.LINE,
+        },
+    },
     # this is probably not a good design decision but this has to be last otherwise the substring
     # search for attacks will always match this without checking the others
     "A": {
@@ -203,6 +213,13 @@ all_responses = {
             "defensive_alternative": DefensiveAlternative.COUNTER_ATTACK,
         },
     },
+    "Cl": {
+        "name": "Failed point in line",
+        "classifications": {
+            "action_type": ActionType.COUNTER_ATTACK,
+            "defensive_alternative": DefensiveAlternative.LINE,
+        },
+    },
     "D": {
         "name": "Failed defense with distance",
         "classifications": {
@@ -219,6 +236,13 @@ all_responses = {
     },
     "Rr": {
         "name": "Failed riposte remise",
+        "classifications": {
+            "action_type": ActionType.PARRY,
+            "defensive_alternative": DefensiveAlternative.PARRY,
+        },
+    },
+    "cR": {
+        "name": "Failed counter riposte",
         "classifications": {
             "action_type": ActionType.PARRY,
             "defensive_alternative": DefensiveAlternative.PARRY,

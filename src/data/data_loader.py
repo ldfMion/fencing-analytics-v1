@@ -1,18 +1,29 @@
 from typing import List
+
 import pandas as pd
 
-from models import BoutData, Touch
-from actions import Action
-from constants import (
-    LEFT_FENCER,
-    RIGHT_FENCER,
-    DATE,
+from src.data.constants import (
     ACTION,
-    RESPONSE,
-    SIDE,
+    DATE,
+    LEFT_FENCER,
     LEFT_SCORE,
+    RESPONSE,
+    RIGHT_FENCER,
     RIGHT_SCORE,
+    SIDE,
 )
+from src.domain.actions import Action
+from src.domain.models import BoutData, Touch
+
+
+def load_data(touches_file: str, bouts_file: str):
+    touches_df = pd.read_csv(touches_file)
+    required_columns = {SIDE, ACTION, RESPONSE}
+    missing = required_columns - set(touches_df.columns)
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+    bouts_df = pd.read_csv(bouts_file)
+    return touches_df, bouts_df
 
 
 def add_touches_to_df(df: pd.DataFrame) -> pd.DataFrame:

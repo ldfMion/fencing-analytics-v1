@@ -1,7 +1,12 @@
 from typing import Callable
 
-from actions import ActionType, DefensiveAlternative, Priority, TacticalIntent
-from fencer_action_provider import FencerActionProvider
+from src.data.fencer_action_provider import FencerActionProvider
+from src.domain.actions import (
+    ActionType,
+    DefensiveAlternative,
+    Priority,
+    TacticalIntent,
+)
 
 
 def format_metric(
@@ -181,12 +186,14 @@ DISTRIBUTIONS: dict[str, Callable[[FencerActionProvider], dict[str, int]]] = {
             and a.scoring_defensive_alternative_is(
                 DefensiveAlternative.DEFENSE_WITH_DISTANCE
             )
+        ),
+        "Point in Line": p.scored(
+            lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.scoring_defensive_alternative_is(DefensiveAlternative.LINE)
         )
         + p.received(
             lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
-            and a.receiving_defensive_alternative_is(
-                DefensiveAlternative.DEFENSE_WITH_DISTANCE
-            )
+            and a.receiving_defensive_alternative_is(DefensiveAlternative.LINE)
         ),
     },
     # "Parry Outcomes": lambda p: {
