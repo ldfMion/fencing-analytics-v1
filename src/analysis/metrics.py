@@ -68,6 +68,11 @@ def ratio(a: int, b: int) -> float:
 # }
 
 METRICS: dict[str, Callable[[FencerActionProvider], float]] = {
+    "Action Scored": lambda p: p.scored(lambda a: True),
+    "Actions Received": lambda p: p.received(lambda a: True),
+    "Score Differential": lambda p: p.scored(lambda a: True)
+    - p.received(lambda a: True),
+    "Scoring Ratio": lambda p: p.scored(lambda a: True) / p.received(lambda a: True),
     "Offense Effectiveness": lambda p: proportion(
         p.scored(lambda a: a.scoring_tactical_intent_is(TacticalIntent.OFFENSIVE)),
         p.received(lambda a: a.receiving_tactical_intent_is(TacticalIntent.OFFENSIVE)),
@@ -78,8 +83,26 @@ METRICS: dict[str, Callable[[FencerActionProvider], float]] = {
     ),
     # percentage of counter attacks that are successful
     "Counter Attack Effectiveness": lambda p: proportion(
-        p.scored(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
-        p.received(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
+        p.scored(
+            lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.scoring_defensive_alternative_is(DefensiveAlternative.COUNTER_ATTACK)
+        ),
+        p.received(
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.receiving_defensive_alternative_is(
+                DefensiveAlternative.COUNTER_ATTACK
+            )
+        ),
+    ),
+    "Parry Effectiveness": lambda p: proportion(
+        p.scored(
+            lambda a: a.scoring_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.scoring_defensive_alternative_is(DefensiveAlternative.PARRY)
+        ),
+        p.received(
+            lambda a: a.receiving_tactical_intent_is(TacticalIntent.DEFENSIVE)
+            and a.receiving_defensive_alternative_is(DefensiveAlternative.PARRY)
+        ),
     ),
     "Offensive Volume": lambda p: proportion(
         p.scored(lambda a: a.scoring_tactical_intent_is(TacticalIntent.OFFENSIVE))
@@ -97,6 +120,14 @@ METRICS: dict[str, Callable[[FencerActionProvider], float]] = {
         p.scored(lambda a: a.scoring_priority_is(Priority.WITH_PRIORITY))
         + p.received(lambda a: a.receiving_priority_is(Priority.WITH_PRIORITY)),
     ),
+    "Scoring No Priority Share": lambda p: proportion(
+        p.scored(lambda a: a.scoring_priority_is(Priority.WITHOUT_PRIORITY)),
+        p.scored(lambda a: a.scoring_priority_is(Priority.WITH_PRIORITY)),
+    ),
+    "Receiving No Priority Share": lambda p: proportion(
+        p.received(lambda a: a.receiving_priority_is(Priority.WITHOUT_PRIORITY)),
+        p.received(lambda a: a.receiving_priority_is(Priority.WITH_PRIORITY)),
+    ),
     "Attack Success Rate vs Counter Attack": lambda p: proportion(
         p.scored(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
         p.received(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
@@ -104,10 +135,6 @@ METRICS: dict[str, Callable[[FencerActionProvider], float]] = {
     "Attack Success Rate vs Parry": lambda p: proportion(
         p.scored(lambda a: a.receiving_action_type_is(ActionType.PARRY)),
         p.received(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
-    ),
-    "Counter Attack Success Rate": lambda p: proportion(
-        p.scored(lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)),
-        p.received(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
     ),
     "Riposte Success Rate": lambda p: proportion(
         p.scored(lambda a: a.scoring_action_type_is(ActionType.PARRY)),
@@ -135,7 +162,7 @@ DISTRIBUTIONS: dict[str, Callable[[FencerActionProvider], dict[str, int]]] = {
             lambda a: a.scoring_action_type_is(ActionType.COUNTER_ATTACK)
         )
         + p.received(lambda a: a.receiving_action_type_is(ActionType.COUNTER_ATTACK)),
-        "Ripostes": p.scored(lambda a: a.scoring_action_type_is(ActionType.PARRY))
+        "Parries": p.scored(lambda a: a.scoring_action_type_is(ActionType.PARRY))
         + p.received(lambda a: a.receiving_action_type_is(ActionType.PARRY)),
     },
     "Received Distribution": lambda p: {

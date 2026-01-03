@@ -3,8 +3,13 @@ import argparse
 from config import BOUTS_FILENAME, FENCER, TOUCHES_FILENAME
 from src.analysis.action_correlation import run_no_priority_correlation
 from src.analysis.action_predictor import FencingActionPredictor
+from src.analysis.metrics import calculate_metrics
 from src.analysis.metrics_analysis import analyze_fencer
-from src.data.csv_fencer_action_provider import CsvOrderedFencerActionProvider
+from src.data.csv_fencer_action_provider import (
+    CsvFencerActionProvider,
+    CsvOrderedFencerActionProvider,
+)
+from src.domain.models import DataSources
 
 
 def main():
@@ -27,8 +32,17 @@ def main():
     )
     args = parser.parse_args()
 
+    sources = DataSources(touches_file=TOUCHES_FILENAME, bouts_file=BOUTS_FILENAME)
+
     if args.analysis_type == "metrics":
-        analyze_fencer(FENCER, date=args.date, bout_type=args.bout_type)
+        provider = CsvFencerActionProvider(
+            FENCER, sources, date=args.date, bout_type=args.bout_type
+        )
+        metrics = calculate_metrics(provider)
+        print("------- Analysis --------")
+        for metric in metrics:
+            print(metric)
+        print()
     elif args.analysis_type == "correlation":
         run_no_priority_correlation(data[0], FENCER)
     elif args.analysis_type == "predictor":

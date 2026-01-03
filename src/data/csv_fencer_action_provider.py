@@ -16,10 +16,11 @@ from src.data.fencer_action_provider import (
     FencerActionProvider,
     OrderedFencerActionProvider,
 )
-from src.domain.models import ActionOutcome
+from src.domain.models import ActionOutcome, DataSources
 
 YELLOW_CARD = "yc"
 RED_CARD = "rc"
+BACK_LINE = "bl"
 
 
 class CsvFencerActionProvider(FencerActionProvider):
@@ -30,19 +31,20 @@ class CsvFencerActionProvider(FencerActionProvider):
     def __init__(
         self,
         fencer_name: str,
-        data: Tuple[pd.DataFrame, pd.DataFrame],
+        sources: DataSources,
         date: str | None = None,
         bout_type: str | None = None,
     ):
         """
         Initializes the CsvFencerActionProvider.
-
-        Args:
-            fencer_name: The name of the fencer to analyze.
-            df: The DataFrame containing the fencing data.
         """
+        touches_df = pd.read_csv(sources.touches_file)
+        required_columns = {SIDE, ACTION, RESPONSE}
+        missing = required_columns - set(touches_df.columns)
+        if missing:
+            raise ValueError(f"Missing required columns: {missing}")
+        bouts_df = pd.read_csv(sources.bouts_file)
         self._fencer_name = fencer_name
-        (touches_df, bouts_df) = data
         self._df = pd.merge(touches_df, bouts_df, how="left", on="bout_id")
         self._df = cast(
             pd.DataFrame,
@@ -50,6 +52,7 @@ class CsvFencerActionProvider(FencerActionProvider):
                 self._df[ACTION].notna()
                 & (self._df[ACTION] != YELLOW_CARD)
                 & (self._df[ACTION] != RED_CARD)
+                & (self._df[ACTION] != BACK_LINE)
             ],
         )
         if date is not None:

@@ -14,13 +14,6 @@ from src.domain.models import DataSources
 
 
 def analyze_fencer(fencer_name: str, date: str | None, bout_type: str | None):
-    """
-    Performs analysis on a fencer's performance.
-
-    Args:
-        main_df: The main DataFrame containing all bout data.
-        fencer_name: The name of the fencer to analyze.
-    """
     sources = DataSources(touches_file=TOUCHES_FILENAME, bouts_file=BOUTS_FILENAME)
     data = load_data(sources.touches_file, sources.bouts_file)
     provider = CsvFencerActionProvider(

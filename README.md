@@ -7,6 +7,8 @@ This project analyzes fencing data from a CSV file and calculates various metric
 - failed defense with distance is classified as an attack, since it corresponds to an answering attack, but a successful defense with distance doesn't necessarily lead to a answering attack
 - If I try to parry a riposte, it should still be classified as offensive and should it still be attack? I don't think this is handled
 - Missing line (Cl) in the dictionary
+- Renewals of answering attacks count the same as regular attack renewals, which shouldn't be the case since answering attack is a defensive action
+- back line and cards don't count in the analysis of actions, but should count in things like score differential, etc
 
 # actions grammar
 
